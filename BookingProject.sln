@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PBBackOffice", "PBBackOffice\PBBackOffice.csproj", "{BDBA2FBF-DEFD-418E-AC1D-9FF138EC26F7}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "PBFrontEnd", "PBFrontEnd\", "{975B3E0C-0316-4E81-8FC5-0373393F50E6}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_63595"
+		Debug.AspNetCompiler.PhysicalPath = "PBFrontEnd\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63595\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_63595"
+		Release.AspNetCompiler.PhysicalPath = "PBFrontEnd\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63595\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "63595"
+		SlnRelativePath = "PBFrontEnd\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{BAC741B2-96B4-471E-836F-CB68C2602890}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingTestFramework", "BookingTestFramework\BookingTestFramework.csproj", "{EE82ACEE-45ED-42D4-9C43-B1708BB374EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTestFramework", "CarParkTestFramework\MyTestFramework.csproj", "{9182D068-C1B2-423E-9820-3352D927C511}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerTestFramework", "CustomerTestFramework\CustomerTestFramework.csproj", "{C541AA50-81AB-449B-B6BF-807B8EA7C08C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BDBA2FBF-DEFD-418E-AC1D-9FF138EC26F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDBA2FBF-DEFD-418E-AC1D-9FF138EC26F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDBA2FBF-DEFD-418E-AC1D-9FF138EC26F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDBA2FBF-DEFD-418E-AC1D-9FF138EC26F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{975B3E0C-0316-4E81-8FC5-0373393F50E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{975B3E0C-0316-4E81-8FC5-0373393F50E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{975B3E0C-0316-4E81-8FC5-0373393F50E6}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{975B3E0C-0316-4E81-8FC5-0373393F50E6}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{BAC741B2-96B4-471E-836F-CB68C2602890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAC741B2-96B4-471E-836F-CB68C2602890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAC741B2-96B4-471E-836F-CB68C2602890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAC741B2-96B4-471E-836F-CB68C2602890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE82ACEE-45ED-42D4-9C43-B1708BB374EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE82ACEE-45ED-42D4-9C43-B1708BB374EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE82ACEE-45ED-42D4-9C43-B1708BB374EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE82ACEE-45ED-42D4-9C43-B1708BB374EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9182D068-C1B2-423E-9820-3352D927C511}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9182D068-C1B2-423E-9820-3352D927C511}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9182D068-C1B2-423E-9820-3352D927C511}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9182D068-C1B2-423E-9820-3352D927C511}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C541AA50-81AB-449B-B6BF-807B8EA7C08C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C541AA50-81AB-449B-B6BF-807B8EA7C08C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C541AA50-81AB-449B-B6BF-807B8EA7C08C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C541AA50-81AB-449B-B6BF-807B8EA7C08C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
