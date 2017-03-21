@@ -162,10 +162,10 @@ namespace ClassLibrary
         {
             // create a boolean variable to flag the error
             Boolean OK = true;
-            // temp variable to store date values
+            // temp variable to store date of birth values
             DateTime DOBTemp;
             // temp variable to store date joined values
-            DateTime DateTemp;
+            //DateTime DateTemp;
             // if the first name is blank
             if (first.Length == 0)
             {
@@ -247,28 +247,28 @@ namespace ClassLibrary
             {
                 OK = false;
             }
-            try
-            {
+            //try
+            //{
                 // copy the DateJoined value to the DateTemp variable
-                DateTemp = Convert.ToDateTime(dateJoined);
+                //DateTemp = Convert.ToDateTime(dateJoined);
                 // check to see if the date is less than today
-                if (DateTemp < DateTime.Now.Date)
-                {
+                //if (DateTemp < DateTime.Now.Date)
+                //{
                     // flag an error
-                    OK = false;
-                }
+                    //OK = false;
+                //}
                 // check to see if the date is greater than today
-                if (DateTemp > DateTime.Now.Date)
-                {
+                //if (DateTemp > DateTime.Now.Date)
+                //{
                     // flag an error
-                    OK = false;
-                }
-            } 
-            catch
-            {
+                   // OK = false;
+               // }
+            //} 
+            //catch
+            //{
                 // set the flag OK to false
-                OK = false;
-            }       
+                //OK = false;
+            //}       
             // return the value of OK
             return OK;
         }

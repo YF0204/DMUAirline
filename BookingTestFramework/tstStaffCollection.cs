@@ -134,7 +134,7 @@ namespace BookingTestFramework
             Assert.AreEqual(AllMembers.ThisMember, TestItem);
         }
 
-        
+        [TestMethod]
         public void UpdateMethodOk()
         {
             // create an instance of the class we want to create

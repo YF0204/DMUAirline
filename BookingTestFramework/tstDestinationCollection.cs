@@ -30,6 +30,8 @@ namespace BookingTestFramework
             TestItem.DestinationID = 1;
             TestItem.Destination = "Rome";
             TestItem.PricePerPerson = 99;
+            TestItem.DayOfFlight = DateTime.Now.Date;
+            TestItem.ReturnDate = DateTime.Now.Date.AddDays(1);
             // add the item to the test list
             TestList.Add(TestItem);
             // assign the data to the property
@@ -49,6 +51,8 @@ namespace BookingTestFramework
             TestDestination.DestinationID = 1;
             TestDestination.Destination = "Rome";
             TestDestination.PricePerPerson = 99;
+            TestDestination.DayOfFlight = DateTime.Now.Date;
+            TestDestination.ReturnDate = DateTime.Now.Date.AddDays(1);
             // assign the data to the property
             AllDestinations.ThisDestination = TestDestination;
             // test to see that the two values are the same
@@ -68,6 +72,8 @@ namespace BookingTestFramework
             TestItem.DestinationID = 1;
             TestItem.Destination = "Rome";
             TestItem.PricePerPerson = 99;
+            TestItem.DayOfFlight = DateTime.Now.Date;
+            TestItem.ReturnDate = DateTime.Now.Date.AddDays(1);
             // add the item to the test list
             TestList.Add(TestItem);
             // assign the data to the property
@@ -89,6 +95,8 @@ namespace BookingTestFramework
             TestItem.DestinationID = 1;
             TestItem.Destination = "Rome";
             TestItem.PricePerPerson = 99;
+            TestItem.DayOfFlight = DateTime.Now.Date;
+            TestItem.ReturnDate = DateTime.Now.Date.AddDays(1);
             // set ThisDestination to the test data
             AllDestinations.ThisDestination = TestItem;
             // add the record
@@ -102,7 +110,7 @@ namespace BookingTestFramework
 
         }
 
-        
+        [TestMethod]
         public void UpdateMethodOk()
         {
             // create an instance of the class we want to create
@@ -114,6 +122,8 @@ namespace BookingTestFramework
             // set its properties
             TestItem.Destination = "Rome";
             TestItem.PricePerPerson = 99;
+            TestItem.DayOfFlight = DateTime.Now.Date;
+            TestItem.ReturnDate = DateTime.Now.Date.AddDays(1);
             // set ThisDestination to the test data
             AllDestinations.ThisDestination = TestItem;
             // add the record
@@ -233,7 +243,7 @@ namespace BookingTestFramework
             if (FilteredDestinations.Count == 2)
             {
                 // check the data is 300
-                if (FilteredDestinations.DestinationList[0].PricePerPerson != 200)
+                if (FilteredDestinations.DestinationList[0].PricePerPerson != 300)
                 {
                     OK = false;
                 }

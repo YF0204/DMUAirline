@@ -14,7 +14,7 @@ namespace ClassLibrary
             // execute the stored procedure
             DB.Execute("sproc_tblDestination_SelectAll");
             // populate the array list with the data table
-            PopulateArray(DB); 
+            PopulateArray(DB);
         }
 
         // private data member for the list
@@ -71,6 +71,8 @@ namespace ClassLibrary
             // set the parameters
             DB.AddParameter("@DestinationName", mThisDestination.Destination);
             DB.AddParameter("@PricePerPerson", mThisDestination.PricePerPerson);
+            DB.AddParameter("@DayOfFlight", mThisDestination.DayOfFlight);
+            DB.AddParameter("@ReturnDate", mThisDestination.ReturnDate);
             // execute the query returning the primary key value
             return DB.Execute("sproc_tblDestination_Insert");
         }
@@ -84,6 +86,8 @@ namespace ClassLibrary
             DB.AddParameter("@DestinationID", mThisDestination.DestinationID);
             DB.AddParameter("@DestinationName", mThisDestination.Destination);
             DB.AddParameter("@PricePerPerson", mThisDestination.PricePerPerson);
+            DB.AddParameter("@DayOfFlight", mThisDestination.DayOfFlight);
+            DB.AddParameter("@ReturnDate", mThisDestination.ReturnDate);
             // execute the stored procedure
             DB.Execute("sproc_tblDestination_Update");
         }
@@ -121,6 +125,8 @@ namespace ClassLibrary
                 Destination.DestinationID = Convert.ToInt32(DB.DataTable.Rows[Index]["DestinationID"]);
                 Destination.Destination = Convert.ToString(DB.DataTable.Rows[Index]["DestinationName"]);
                 Destination.PricePerPerson = Convert.ToDecimal(DB.DataTable.Rows[Index]["PricePerPerson"]);
+                Destination.DayOfFlight = Convert.ToDateTime(DB.DataTable.Rows[Index]["DayOfFlight"]);
+                Destination.ReturnDate = Convert.ToDateTime(DB.DataTable.Rows[Index]["ReturnDate"]);
                 // add the record to private data member
                 mDestinationList.Add(Destination);
                 // increment the index

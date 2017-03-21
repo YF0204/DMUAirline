@@ -56,6 +56,36 @@ namespace BookingTestFramework
         }
 
         [TestMethod]
+        public void DayOfFlightOK()
+        {
+            // create an instance of the class we want to create
+            clsDestination ADestination = new clsDestination();
+            // create test data to assign to the property
+            DateTime Flight = DateTime.Now.Date;
+            // add 7 days onto the date
+            Flight = Flight.AddDays(7);
+            // assign data to the property
+            ADestination.DayOfFlight = Flight;
+            // test to see that the two values are the same
+            Assert.AreEqual(ADestination.DayOfFlight, Flight);
+        }
+
+        [TestMethod]
+        public void ReturnDateOK()
+        {
+            // create an instance of the class we want to create
+            clsDestination ADestination = new clsDestination();
+            // create test data to assign to the property
+            DateTime Flight = DateTime.Now.Date;
+            // add 7 days onto the date
+            Flight = Flight.AddDays(14);
+            // assign data to the property
+            ADestination.ReturnDate = Flight;
+            // test to see that the two values are the same
+            Assert.AreEqual(ADestination.ReturnDate, Flight);
+        }
+
+        [TestMethod]
         public void DestinationValidMethodOK()
         {
             // create an instance of the class we want to create
@@ -65,8 +95,10 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "New York";
             decimal Price = 100;
+            string Flight = "21/03/2017";
+            string Return = "22/03/2017";
             // execute the method
-            OK = ADestination.Valid(Destination, Price);
+            OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
             Assert.IsTrue(OK);
         }
@@ -162,8 +194,10 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "";
             decimal Price = 100;
+            string Flight = "20/03/2017";
+            string Return = "21/03/2017";
             // execute the method
-            OK = ADestination.Valid(Destination, Price);
+            OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
             Assert.IsFalse(OK);
         }
@@ -178,8 +212,10 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "D";
             decimal Price = 100;
+            string Flight = "21/03/2017";
+            string Return = "22/03/2017";
             // execute the method
-            OK = ADestination.Valid(Destination, Price);
+            OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
             Assert.IsTrue(OK);
         }
@@ -194,8 +230,10 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "DA";
             decimal Price = 100;
+            string Flight = "21/03/2017";
+            string Return = "22/03/2017";
             // execute the method
-            OK = ADestination.Valid(Destination, Price);
+            OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
             Assert.IsTrue(OK);
         }
@@ -211,8 +249,10 @@ namespace BookingTestFramework
             string Destination = "";
             Destination = Destination.PadRight(99, 'a');
             decimal Price = 100;
+            string Flight = "21/03/2017";
+            string Return = "22/03/2017";
             // execute the method
-            OK = ADestination.Valid(Destination, Price);
+            OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
             Assert.IsTrue(OK);
         }
@@ -228,8 +268,10 @@ namespace BookingTestFramework
             string Destination = "";
             Destination = Destination.PadRight(100, 'a');
             decimal Price = 100;
+            string Flight = "21/03/2017";
+            string Return = "22/03/2017";
             // execute the method
-            OK = ADestination.Valid(Destination, Price);
+            OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
             Assert.IsTrue(OK);
 
@@ -246,8 +288,10 @@ namespace BookingTestFramework
             string Destination = "";
             Destination = Destination.PadRight(101, 'a');
             decimal Price = 100;
+            string Flight = "20/03/2017";
+            string Return = "21/03/2017";
             // execute the method
-            OK = ADestination.Valid(Destination, Price);
+            OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
             Assert.IsFalse(OK);
         }
@@ -263,8 +307,10 @@ namespace BookingTestFramework
             string Destination = "";
             Destination = Destination.PadRight(50, 'a');
             decimal Price = 100;
+            string Flight = "21/03/2017";
+            string Return = "22/03/2017";
             // execute the method
-            OK = ADestination.Valid(Destination, Price);
+            OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
             Assert.IsTrue(OK);
         }
@@ -280,8 +326,10 @@ namespace BookingTestFramework
             string Destination = "";
             Destination = Destination.PadRight(200, 'a');
             decimal Price = 100;
+            string Flight = "20/03/2017";
+            string Return = "21/03/2017";
             // execute the method
-            OK = ADestination.Valid(Destination, Price);
+            OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
             Assert.IsFalse(OK);
         }
@@ -296,8 +344,10 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "Dubai";
             decimal Price = -10;
+            string Flight = "20/03/2017";
+            string Return = "21/03/2017";
             // execute the method
-            OK = ADestination.Valid(Destination, Price);
+            OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
             Assert.IsFalse(OK);
         }
@@ -312,8 +362,10 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "Dubai";
             decimal Price = 0;
+            string Flight = "20/03/2017";
+            string Return = "21/03/2017";
             // execute the method
-            OK = ADestination.Valid(Destination, Price);
+            OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
             Assert.IsFalse(OK);
         }
@@ -328,8 +380,10 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "Dubai";
             decimal Price = 0.01m;
+            string Flight = "20/03/2017";
+            string Return = "21/03/2017";
             // execute the method
-            OK = ADestination.Valid(Destination, Price);
+            OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
             Assert.IsFalse(OK);
         }
@@ -344,8 +398,10 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "Dubai";
             decimal Price = 10;
+            string Flight = "22/03/2017";
+            string Return = "23/03/2017";
             // execute the method
-            OK = ADestination.Valid(Destination, Price);
+            OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
             Assert.IsTrue(OK);
         }
@@ -359,8 +415,10 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "Dubai";
             decimal Price = 1000;
+            string Flight = "22/03/2017";
+            string Return = "23/03/2017";
             // execute the method
-            OK = ADestination.Valid(Destination, Price);
+            OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
             Assert.IsTrue(OK);
         }
@@ -375,8 +433,10 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "Dubai";
             decimal Price = 100000;
+            string Flight = "22/03/2017";
+            string Return = "23/03/2017";
             // execute the method
-            OK = ADestination.Valid(Destination, Price);
+            OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
             Assert.IsTrue(OK);
         }
@@ -391,8 +451,10 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "Dubai";
             decimal Price = 1000000;
+            string Flight = "22/03/2017";
+            string Return = "23/03/2017";
             // execute the method
-            OK = ADestination.Valid(Destination, Price);
+            OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
             Assert.IsTrue(OK);
         }
@@ -407,8 +469,10 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "Dubai";
             decimal Price = 5000;
+            string Flight = "22/03/2017";
+            string Return = "23/03/2017";
             // execute the method
-            OK = ADestination.Valid(Destination, Price);
+            OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
             Assert.IsTrue(OK);
         }
@@ -423,8 +487,100 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "Dubai";
             decimal Price = 100000;
+            string Flight = "22/03/2017";
+            string Return = "23/03/2017";
             // execute the method
-            OK = ADestination.Valid(Destination, Price);
+            OK = ADestination.Valid(Destination, Price, Flight, Return);
+            // test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void DayOfFlightMinLessOne()
+        {
+            // create an instance of the class we want to create
+            clsDestination ADestination = new clsDestination();
+            // boolean variable to store the result of the validation
+            Boolean OK = false;
+            // create test data to assign to the property
+            string Destination = "Dubai";
+            decimal Price = 100000;
+            string Flight = "19/03/2017";
+            string Return = "25/03/2017"; 
+            // execute the method
+            OK = ADestination.Valid(Destination, Price, Flight, Return);
+            // test to see that the result is correct
+            Assert.IsFalse(OK);
+        }
+
+        [TestMethod]
+        public void DayOfFlightMinBoundary()
+        {
+            // create an instance of the class we want to create
+            clsDestination ADestination = new clsDestination();
+            // boolean variable to store the result of the validation
+            Boolean OK = false;
+            // create test data to assign to the property
+            string Destination = "Dubai";
+            decimal Price = 100000;
+            string Flight = "21/03/2017";
+            string Return = "25/03/2017";
+            // execute the method
+            OK = ADestination.Valid(Destination, Price, Flight, Return);
+            // test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void DayOfFlightMinPlusOne()
+        {
+            // create an instance of the class we want to create
+            clsDestination ADestination = new clsDestination();
+            // boolean variable to store the result of the validation
+            Boolean OK = false;
+            // create test data to assign to the property
+            string Destination = "Dubai";
+            decimal Price = 100000;
+            string Flight = "21/03/2017";
+            string Return = "25/03/2017";
+            // execute the method
+            OK = ADestination.Valid(Destination, Price, Flight, Return);
+            // test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void ReturnDateMinLessOne()
+        {
+            // create an instance of the class we want to create
+            clsDestination ADestination = new clsDestination();
+            // boolean variable to store the result of the validation
+            Boolean OK = false;
+            // create test data to assign to the property
+            string Destination = "Dubai";
+            decimal Price = 100000;
+            string Flight = "20/03/2017";
+            string Return = "19/03/2017";
+            // execute the method
+            OK = ADestination.Valid(Destination, Price, Flight, Return);
+            // test to see that the result is correct
+            Assert.IsFalse(OK);
+        }
+
+        [TestMethod]
+        public void ReturnDateMinBoundary()
+        {
+            // create an instance of the class we want to create
+            clsDestination ADestination = new clsDestination();
+            // boolean variable to store the result of the validation
+            Boolean OK = false;
+            // create test data to assign to the property
+            string Destination = "Dubai";
+            decimal Price = 100000;
+            string Flight = "21/03/2017";
+            string Return = "25/03/2017";
+            // execute the method
+            OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
             Assert.IsTrue(OK);
         }
