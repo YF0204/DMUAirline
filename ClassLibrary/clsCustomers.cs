@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MyClassLibrary
+namespace ClassLibrary
 {
     public class clsCustomers
     {
@@ -158,7 +158,7 @@ namespace MyClassLibrary
                     Ok = false;
 
                 }
-                if (address1.Length < 14)
+                if (address1.Length < 5)
                 {
                     Ok = false;
                 }
@@ -174,7 +174,7 @@ namespace MyClassLibrary
                     Ok = false;
 
                 }
-                if (address2.Length < 14)
+                if (address2.Length < 5)
                 {
                     Ok = false;
                 }
@@ -222,7 +222,7 @@ namespace MyClassLibrary
                     Ok = false;
 
                 }
-                if (email.Length < 15)
+                if (email.Length < 6)
                 {
                     Ok = false;
                 }
