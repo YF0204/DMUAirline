@@ -42,11 +42,13 @@ public partial class AddCarRes : System.Web.UI.Page
             Reservation.ThisCarPark.Location = Convert.ToString(ddlLocation.SelectedValue);
             // add the record
             Reservation.Add();
+            Response.Redirect("CarResDefault.aspx");
         }
         else
         {
             // state error
             lblError.Text = "There were problems, bro!";
+           
         }
 
     }
@@ -70,11 +72,13 @@ public partial class AddCarRes : System.Web.UI.Page
             Reservation.ThisCarPark.Location = Convert.ToString(ddlLocation.SelectedValue);
             //update the record 
             Reservation.Update();
+            Response.Redirect("CarResDefault.aspx");
         }
         else
         {
             //report an error
             lblError.Text = "There wre problem with the date entered";
+            
         }
 
 
@@ -106,7 +110,7 @@ public partial class AddCarRes : System.Web.UI.Page
             Update();
         }
         //all done so redirect  back to the main page
-        Response.Redirect("CarResDefault.aspx");
+        //Response.Redirect("CarResDefault.aspx");
     }
 
     protected void BtnCancel_Click(object sender, EventArgs e)

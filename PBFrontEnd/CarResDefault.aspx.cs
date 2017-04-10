@@ -13,8 +13,7 @@ public partial class CarResDefault : System.Web.UI.Page
         if (IsPostBack == false)
         {
             //update the list box
-            //DisplayCarReg();
-            LblCarReg.Text = DisplayCarReg("") + "Record Found";
+            //LblCarReg.Text = DisplayCarReg("") + "Record Found";
         }
     }
     //void DisplayCarReg()
@@ -40,6 +39,10 @@ public partial class CarResDefault : System.Web.UI.Page
         Int32 RecordCount;
         // var for first name
         string CarReg;
+        Int32 CarParkId;
+        DateTime BookingDate;
+        DateTime StartDate;
+        DateTime EndDate;
         // var for Index
         Int32 Index = 0;
         // clear the list of any existing item
@@ -53,12 +56,11 @@ public partial class CarResDefault : System.Web.UI.Page
         {
             // get the first name of the staff member
             CarReg = Convert.ToString(carreg.CarParkList[Index].CarReg);
-            //// get the last name of the staff member
-            //LastName = Convert.ToString(Members.StaffList[Index].StaffLastName);
-            //// get the ID of the staff member
-            //StaffID = Convert.ToString(Members.StaffList[Index].StaffID);
-            //// set up a new object of class list item
-            ListItem NewItem = new ListItem(CarReg + ",");
+            CarParkId = Convert.ToInt32(carreg.CarParkList[Index].carparkid);
+            BookingDate = Convert.ToDateTime(carreg.CarParkList[Index].BookingDate.ToShortDateString());
+            StartDate = Convert.ToDateTime(carreg.CarParkList[Index].StartDate);
+            EndDate = Convert.ToDateTime(carreg.CarParkList[Index].EndDate);
+            ListItem NewItem = new ListItem(CarReg + "" + BookingDate.ToShortDateString() + " " + StartDate.ToShortDateString() + "  " + EndDate.ToShortDateString() +  CarParkId.ToString());
             // add the item to the list
             LstCarReg.Items.Add(NewItem);
             // increment the index
@@ -70,14 +72,18 @@ public partial class CarResDefault : System.Web.UI.Page
 
     protected void BtnFilter_Click(object sender, EventArgs e)
     {
-        // event handler for searching for staff members
+     
         // declare var to store the record count
         Int32 RecordCount;
+        if(TxtCarReg.Text == "")
+        {
+            LblCarReg.Text = "Please enter a valid CarReg";
+        }
+        string carreg = Convert.ToString(TxtCarReg.Text);
         // assign the results of the display staff members function to the record count var
-        RecordCount = DisplayCarReg(TxtCarReg.Text);
+        RecordCount = DisplayCarReg(carreg);
         // display the number of records found
         LblCarReg.Text = RecordCount + " records found";
-
     }
 
     protected void BtnDelete_Click(object sender, EventArgs e)
@@ -132,5 +138,10 @@ public partial class CarResDefault : System.Web.UI.Page
         Session["CarParkID"] = -1;
         //direct back to the main page
         Response.Redirect("AddCarRes.aspx");
+    }
+
+    protected void LstCarReg_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
     }
 }
