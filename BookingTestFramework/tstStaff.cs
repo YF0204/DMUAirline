@@ -1570,86 +1570,86 @@ namespace BookingTestFramework
             Assert.IsTrue(OK);
         }
 
-        //[TestMethod]
-        //public void StaffDateJoinedMinPlusOne()
-        //{
-        //    // create an instace of the class we want to create
-        //    clsStaff AMember = new clsStaff();
-        //    // boolean variable to store the result of the validation
-        //    Boolean OK = false;
-        //    // create test data to assign to the property
-        //    string First = "Matthew";
-        //    string Last = "Anderson";
-        //    string Address = "85 Warstead Road";
-        //    string Email = "matt@gmail.com";
-        //    string PostCode = "WS29RA";
-        //    string ContactNo = "01922645322";
-        //    string DOB = "02/04/1956";
-        //    // variable to store the test date data
-        //    DateTime TestDate;
-        //    // set the date to today
-        //    TestDate = DateTime.Now.Date;
-        //    // change the date - add 1 day
-        //    TestDate = TestDate.AddDays(1);
-        //    // convert the date variable to a string
-        //    string DateJoined = TestDate.ToString();
-        //    // execute the method
-        //    OK = AMember.Valid(First, Last, Address, Email, PostCode, ContactNo, DOB, DateJoined);
-        //    // test to see that the result is correct
-        //    Assert.IsFalse(OK);
-        //}
+        [TestMethod]
+        public void StaffDateJoinedMinPlusOne()
+        {
+            // create an instace of the class we want to create
+            clsStaff AMember = new clsStaff();
+            // boolean variable to store the result of the validation
+            Boolean OK = false;
+            // create test data to assign to the property
+            string First = "Matthew";
+            string Last = "Anderson";
+            string Address = "85 Warstead Road";
+            string Email = "matt@gmail.com";
+            string PostCode = "WS29RA";
+            string ContactNo = "01922645322";
+            string DOB = "02/04/1956";
+            // variable to store the test date data
+            DateTime TestDate;
+            // set the date to today
+            TestDate = DateTime.Now.Date;
+            // change the date - add 1 day
+            TestDate = TestDate.AddDays(1);
+            // convert the date variable to a string
+            string DateJoined = TestDate.ToString();
+            // execute the method
+            OK = AMember.Valid(First, Last, Address, Email, PostCode, ContactNo, DOB, DateJoined);
+            // test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
 
-        //[TestMethod]
-        //public void StaffDateJoinedExtremeMax()
-        //{
-        //    // create an instace of the class we want to create
-        //    clsStaff AMember = new clsStaff();
-        //    // boolean variable to store the result of the validation
-        //    Boolean OK = false;
-        //    // create test data to assign to the property
-        //    string First = "Matthew";
-        //    string Last = "Anderson";
-        //    string Address = "85 Warstead Road";
-        //    string Email = "matt@gmail.com";
-        //    string PostCode = "WS29RA";
-        //    string ContactNo = "01922645322";
-        //    string DOB = "02/04/1956";
-        //    // variable to store the test date data
-        //    DateTime TestDate;
-        //    // set the date to today
-        //    TestDate = DateTime.Now.Date;
-        //    // change the date to more than 100 years
-        //    TestDate = TestDate.AddYears(100);
-        //    // convert the date variable to a string
-        //    string DateJoined = TestDate.ToString();
-        //    // execute the method
-        //    OK = AMember.Valid(First, Last, Address, Email, PostCode, ContactNo, DOB, DateJoined);
-        //    // test to see that the result is correct
-        //    Assert.IsFalse(OK);
-        //}
+        [TestMethod]
+        public void StaffDateJoinedExtremeMax()
+        {
+            // create an instace of the class we want to create
+            clsStaff AMember = new clsStaff();
+            // boolean variable to store the result of the validation
+            Boolean OK = false;
+            // create test data to assign to the property
+            string First = "Matthew";
+            string Last = "Anderson";
+            string Address = "85 Warstead Road";
+            string Email = "matt@gmail.com";
+            string PostCode = "WS29RA";
+            string ContactNo = "01922645322";
+            string DOB = "02/04/1956";
+            // variable to store the test date data
+            DateTime TestDate;
+            // set the date to today
+            TestDate = DateTime.Now.Date;
+            // change the date to more than 100 years
+            TestDate = TestDate.AddYears(100);
+            // convert the date variable to a string
+            string DateJoined = TestDate.ToString();
+            // execute the method
+            OK = AMember.Valid(First, Last, Address, Email, PostCode, ContactNo, DOB, DateJoined);
+            // test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
 
-        //[TestMethod]
-        //public void StaffDateJoinedInvalidData()
-        //{
-        //    // create an instace of the class we want to create
-        //    clsStaff AMember = new clsStaff();
-        //    // boolean variable to store the result of the validation
-        //    Boolean OK = false;
-        //    // create test data to assign to the property
-        //    string First = "Matthew";
-        //    string Last = "Anderson";
-        //    string Address = "85 Warstead Road";
-        //    string Email = "matt@gmail.com";
-        //    string PostCode = "WS29RA";
-        //    string ContactNo = "01922645322";
-        //    string DOB = "02/04/1956";
-        //    // convert the date variable to a string
-        //    string DateJoined = "This ain't no date value!";
-        //    // execute the method
-        //    OK = AMember.Valid(First, Last, Address, Email, PostCode, ContactNo, DOB, DateJoined);
-        //    // test to see that the result is correct
-        //    Assert.IsFalse(OK);
-        //}
+        [TestMethod]
+        public void StaffDateJoinedInvalidData()
+        {
+            // create an instace of the class we want to create
+            clsStaff AMember = new clsStaff();
+            // boolean variable to store the result of the validation
+            Boolean OK = false;
+            // create test data to assign to the property
+            string First = "Matthew";
+            string Last = "Anderson";
+            string Address = "85 Warstead Road";
+            string Email = "matt@gmail.com";
+            string PostCode = "WS29RA";
+            string ContactNo = "01922645322";
+            string DOB = "02/04/1956";
+            // convert the date variable to a string
+            string DateJoined = "This ain't no date value!";
+            // execute the method
+            OK = AMember.Valid(First, Last, Address, Email, PostCode, ContactNo, DOB, DateJoined);
+            // test to see that the result is correct
+            Assert.IsFalse(OK);
+        }
 
         [TestMethod]
         public void StaffEmailAddressMinLessOne()

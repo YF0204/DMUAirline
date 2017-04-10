@@ -21,7 +21,7 @@ namespace ClassLibrary
         // private data member for the StaffDateJoined property
         private DateTime mStaffDateJoined;
         // private data member for the StaffEmailAddress property
-        private string mStaffEmailAddress; 
+        private string mStaffEmailAddress;
 
         // public property for the staff ID
         public int StaffID
@@ -165,7 +165,7 @@ namespace ClassLibrary
             // temp variable to store date of birth values
             DateTime DOBTemp;
             // temp variable to store date joined values
-            //DateTime DateTemp;
+            DateTime DateTemp;
             // if the first name is blank
             if (first.Length == 0)
             {
@@ -247,29 +247,30 @@ namespace ClassLibrary
             {
                 OK = false;
             }
-            //try
+            try
+            {
+                DateTemp = Convert.ToDateTime(dateJoined);
+            }
             //{
-                // copy the DateJoined value to the DateTemp variable
-                //DateTemp = Convert.ToDateTime(dateJoined);
-                // check to see if the date is less than today
-                //if (DateTemp < DateTime.Now.Date)
-                //{
-                    // flag an error
-                    //OK = false;
-                //}
-                // check to see if the date is greater than today
-                //if (DateTemp > DateTime.Now.Date)
-                //{
-                    // flag an error
-                   // OK = false;
-               // }
+            // copy the DateJoined value to the DateTemp variable
+            //DateTemp = Convert.ToDateTime(dateJoined);
+            // check to see if the date is less than today
+            //if (DateTemp < DateTime.Now.Date)
+            //{
+            // flag an error
+            //OK = false;
+            //}
+            // check to see if the date is greater than today
+            //if (DateTemp > DateTime.Now.Date)
+            //{
+            // flag an error
+            // OK = false;
+            // }
             //} 
-            //catch
-            //{
-                // set the flag OK to false
-                //OK = false;
-            //}       
-            // return the value of OK
+            catch
+            {
+                OK = false;
+            }
             return OK;
         }
 
@@ -282,7 +283,7 @@ namespace ClassLibrary
             // execute the stored procedure
             DB.Execute("sproc_tblStaff_FilterByStaffID");
             // if one record is found
-            if (DB.Count  == 1)
+            if (DB.Count == 1)
             {
                 // copy thr data from the database to the private data members
                 mStaffID = Convert.ToInt32(DB.DataTable.Rows[0]["StaffID"]);

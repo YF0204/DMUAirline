@@ -95,8 +95,8 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "New York";
             decimal Price = 100;
-            string Flight = "21/03/2017";
-            string Return = "22/03/2017";
+            string Flight = Convert.ToString(DateTime.Now.Date);
+            string Return = Convert.ToString(DateTime.Now.Date.AddDays(1));
             // execute the method
             OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
@@ -194,8 +194,8 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "";
             decimal Price = 100;
-            string Flight = "20/03/2017";
-            string Return = "21/03/2017";
+            string Flight = Convert.ToString(DateTime.Now.Date);
+            string Return = Convert.ToString(DateTime.Now.Date.AddDays(1));
             // execute the method
             OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
@@ -212,8 +212,8 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "D";
             decimal Price = 100;
-            string Flight = "21/03/2017";
-            string Return = "22/03/2017";
+            string Flight = Convert.ToString(DateTime.Now.Date);
+            string Return = Convert.ToString(DateTime.Now.Date.AddDays(1));
             // execute the method
             OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
@@ -230,8 +230,8 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "DA";
             decimal Price = 100;
-            string Flight = "21/03/2017";
-            string Return = "22/03/2017";
+            string Flight = Convert.ToString(DateTime.Now.Date);
+            string Return = Convert.ToString(DateTime.Now.Date.AddDays(1));
             // execute the method
             OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
@@ -249,8 +249,8 @@ namespace BookingTestFramework
             string Destination = "";
             Destination = Destination.PadRight(99, 'a');
             decimal Price = 100;
-            string Flight = "21/03/2017";
-            string Return = "22/03/2017";
+            string Flight = Convert.ToString(DateTime.Now.Date);
+            string Return = Convert.ToString(DateTime.Now.Date.AddDays(1));
             // execute the method
             OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
@@ -268,8 +268,8 @@ namespace BookingTestFramework
             string Destination = "";
             Destination = Destination.PadRight(100, 'a');
             decimal Price = 100;
-            string Flight = "21/03/2017";
-            string Return = "22/03/2017";
+            string Flight = Convert.ToString(DateTime.Now.Date);
+            string Return = Convert.ToString(DateTime.Now.Date.AddDays(1));
             // execute the method
             OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
@@ -288,8 +288,8 @@ namespace BookingTestFramework
             string Destination = "";
             Destination = Destination.PadRight(101, 'a');
             decimal Price = 100;
-            string Flight = "20/03/2017";
-            string Return = "21/03/2017";
+            string Flight = Convert.ToString(DateTime.Now.Date);
+            string Return = Convert.ToString(DateTime.Now.Date.AddDays(1));
             // execute the method
             OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
@@ -307,8 +307,8 @@ namespace BookingTestFramework
             string Destination = "";
             Destination = Destination.PadRight(50, 'a');
             decimal Price = 100;
-            string Flight = "21/03/2017";
-            string Return = "22/03/2017";
+            string Flight = Convert.ToString(DateTime.Now.Date);
+            string Return = Convert.ToString(DateTime.Now.Date.AddDays(1));
             // execute the method
             OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
@@ -326,8 +326,8 @@ namespace BookingTestFramework
             string Destination = "";
             Destination = Destination.PadRight(200, 'a');
             decimal Price = 100;
-            string Flight = "20/03/2017";
-            string Return = "21/03/2017";
+            string Flight = Convert.ToString(DateTime.Now.Date);
+            string Return = Convert.ToString(DateTime.Now.Date.AddDays(1));
             // execute the method
             OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
@@ -344,8 +344,8 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "Dubai";
             decimal Price = -10;
-            string Flight = "20/03/2017";
-            string Return = "21/03/2017";
+            string Flight = Convert.ToString(DateTime.Now.Date);
+            string Return = Convert.ToString(DateTime.Now.Date.AddDays(1));
             // execute the method
             OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
@@ -362,8 +362,8 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "Dubai";
             decimal Price = 0;
-            string Flight = "20/03/2017";
-            string Return = "21/03/2017";
+            string Flight = Convert.ToString(DateTime.Now.Date);
+            string Return = Convert.ToString(DateTime.Now.Date.AddDays(1));
             // execute the method
             OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
@@ -380,8 +380,8 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "Dubai";
             decimal Price = 0.01m;
-            string Flight = "20/03/2017";
-            string Return = "21/03/2017";
+            string Flight = Convert.ToString(DateTime.Now.Date);
+            string Return = Convert.ToString(DateTime.Now.Date.AddDays(1));
             // execute the method
             OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
@@ -398,8 +398,8 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "Dubai";
             decimal Price = 10;
-            string Flight = "22/03/2017";
-            string Return = "23/03/2017";
+            string Flight = Convert.ToString(DateTime.Now.Date);
+            string Return = Convert.ToString(DateTime.Now.Date.AddDays(1));
             // execute the method
             OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
@@ -415,8 +415,8 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "Dubai";
             decimal Price = 1000;
-            string Flight = "22/03/2017";
-            string Return = "23/03/2017";
+            string Flight = Convert.ToString(DateTime.Now.Date);
+            string Return = Convert.ToString(DateTime.Now.Date.AddDays(1));
             // execute the method
             OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
@@ -433,8 +433,8 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "Dubai";
             decimal Price = 100000;
-            string Flight = "22/03/2017";
-            string Return = "23/03/2017";
+            string Flight = Convert.ToString(DateTime.Now.Date);
+            string Return = Convert.ToString(DateTime.Now.Date.AddDays(1));
             // execute the method
             OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
@@ -451,8 +451,8 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "Dubai";
             decimal Price = 1000000;
-            string Flight = "22/03/2017";
-            string Return = "23/03/2017";
+            string Flight = Convert.ToString(DateTime.Now.Date);
+            string Return = Convert.ToString(DateTime.Now.Date.AddDays(1));
             // execute the method
             OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
@@ -469,8 +469,8 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "Dubai";
             decimal Price = 5000;
-            string Flight = "22/03/2017";
-            string Return = "23/03/2017";
+            string Flight = Convert.ToString(DateTime.Now.Date);
+            string Return = Convert.ToString(DateTime.Now.Date.AddDays(1));
             // execute the method
             OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
@@ -487,8 +487,8 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "Dubai";
             decimal Price = 100000;
-            string Flight = "22/03/2017";
-            string Return = "23/03/2017";
+            string Flight = Convert.ToString(DateTime.Now.Date);
+            string Return = Convert.ToString(DateTime.Now.Date.AddDays(1));
             // execute the method
             OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
@@ -506,7 +506,7 @@ namespace BookingTestFramework
             string Destination = "Dubai";
             decimal Price = 100000;
             string Flight = "19/03/2017";
-            string Return = "25/03/2017"; 
+            string Return = "25/03/2017";
             // execute the method
             OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
@@ -523,8 +523,8 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "Dubai";
             decimal Price = 100000;
-            string Flight = "21/03/2017";
-            string Return = "25/03/2017";
+            string Flight = Convert.ToString(DateTime.Now.Date);
+            string Return = Convert.ToString(DateTime.Now.Date.AddDays(1));
             // execute the method
             OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
@@ -541,8 +541,8 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "Dubai";
             decimal Price = 100000;
-            string Flight = "21/03/2017";
-            string Return = "25/03/2017";
+            string Flight = Convert.ToString(DateTime.Now.Date);
+            string Return = Convert.ToString(DateTime.Now.Date.AddDays(1));
             // execute the method
             OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
@@ -577,8 +577,8 @@ namespace BookingTestFramework
             // create test data to assign to the property
             string Destination = "Dubai";
             decimal Price = 100000;
-            string Flight = "21/03/2017";
-            string Return = "25/03/2017";
+            string Flight = Convert.ToString(DateTime.Now.Date);
+            string Return = Convert.ToString(DateTime.Now.Date.AddDays(1));
             // execute the method
             OK = ADestination.Valid(Destination, Price, Flight, Return);
             // test to see that the result is correct
