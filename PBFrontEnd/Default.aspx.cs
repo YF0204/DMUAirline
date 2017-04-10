@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ClassLibrary;
+using System;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using ClassLibrary;
 
 public partial class _Default : System.Web.UI.Page
 {
