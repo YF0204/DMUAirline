@@ -5,7 +5,11 @@ namespace ClassLibrary
 {
     public class clsBookingCollection
     {
-        // constructor for the clas
+        // private data member for the list
+        List<clsBooking> mBookingList = new List<clsBooking>();
+        // private data member for this booking
+        clsBooking mThisBooking = new clsBooking();
+        // constructor for the class
         public clsBookingCollection()
         {
             // var for the index
@@ -35,8 +39,7 @@ namespace ClassLibrary
             }
 
         }
-        // private data member for the list
-        List<clsBooking> mBookingList = new List<clsBooking>();
+        
         // public property for the BookingList
         public List<clsBooking> BookingList
         {
@@ -51,7 +54,7 @@ namespace ClassLibrary
                 mBookingList = value;
             }
         }
-        // public propery for Count
+        // public property for Count
         public int Count
         {
             get
@@ -64,6 +67,32 @@ namespace ClassLibrary
                 // to do later
             }
         }
-        public clsBooking ThisBooking { get; set; }
+        // public property for ThisBooking
+        public clsBooking ThisBooking
+        {
+            get
+            {
+                // return the private data
+                return mThisBooking;
+            }
+            set
+            {
+                // set the value of the private data
+                mThisBooking = value;
+            }
+        }
+
+        public int Add()
+        {
+            // connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            // set the parameters for the stored procedure
+            DB.AddParameter("@BookingID", mThisBooking.BookingID);
+            DB.AddParameter("@TotalPrice", mThisBooking.TotalPrice);
+            DB.AddParameter("@BookingApproved", mThisBooking.BookingApproved);
+            DB.AddParameter("@DestinationID", mThisBooking.DestinationID);
+            // execute the query using the stored procedure
+            return DB.Execute("sproc_tblBooking_MakeBooking");
+        }
     }
 }

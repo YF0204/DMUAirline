@@ -90,5 +90,31 @@ namespace BookingTestFramework
             // test to see that the two values are the same
             Assert.AreEqual(AllBookings.Count, TestList.Count);
         }
+
+        [TestMethod]
+        public void AddBookingMethodOK()
+        {
+            // create an instance of the booking collection class
+            clsBookingCollection AllBookings = new clsBookingCollection();
+            // create the item of test data
+            clsBooking TestItem = new clsBooking();
+            // var to store primary key
+            Int32 PrimaryKey = 0;
+            // set its properties
+            TestItem.BookingID = 3;
+            TestItem.TotalPrice = 300;
+            TestItem.BookingApproved = false;
+            TestItem.DestinationID = 2;
+            // set ThisBooking to the test data
+            AllBookings.ThisBooking = TestItem;
+            // add the record
+            PrimaryKey = AllBookings.Add();
+            // set the primary key of the test data
+            TestItem.BookingID = PrimaryKey;
+            // find the record
+            AllBookings.ThisBooking.Find(PrimaryKey);
+            // test to see that two values are the same
+            Assert.AreEqual(AllBookings.ThisBooking, TestItem);
+        }
     }
 }
