@@ -11,21 +11,20 @@
         <form id="form1" runat="server">
  
              <header>
-                Header text here
+                DMU Airline Booking System
             </header>
  
             <article>
-                Your text here
                 <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
             </article>
  
             <nav>
-                Navigation links here
+                Navigation Links
             </nav>
  
             <footer>
-                Footer text here
+                Created by Yaseen Fulat
             </footer>
         </form>
     </body>
