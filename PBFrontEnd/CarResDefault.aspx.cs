@@ -60,7 +60,7 @@ public partial class CarResDefault : System.Web.UI.Page
             BookingDate = Convert.ToDateTime(carreg.CarParkList[Index].BookingDate.ToShortDateString());
             StartDate = Convert.ToDateTime(carreg.CarParkList[Index].StartDate);
             EndDate = Convert.ToDateTime(carreg.CarParkList[Index].EndDate);
-            ListItem NewItem = new ListItem(CarReg + "" + BookingDate.ToShortDateString() + " " + StartDate.ToShortDateString() + "  " + EndDate.ToShortDateString() +  CarParkId.ToString());
+            ListItem NewItem = new ListItem(CarReg + "" + BookingDate.ToShortDateString() + " " + StartDate.ToShortDateString() + "  " + EndDate.ToShortDateString() ,CarParkId.ToString());
             // add the item to the list
             LstCarReg.Items.Add(NewItem);
             // increment the index

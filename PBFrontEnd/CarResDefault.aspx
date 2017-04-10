@@ -18,7 +18,7 @@
         <asp:ListBox ID="LstCarReg" runat="server" OnSelectedIndexChanged="LstCarReg_SelectedIndexChanged" style="z-index: 1; left: 415px; top: 121px; position: absolute; width: 665px; height: 282px"></asp:ListBox>
     <div style="text-align: center">
     
-        <asp:Label ID="LblCarReg" runat="server" Text="Please Enter Your Car Reg" style="z-index: 1; left: 17px; top: 84px; position: absolute"></asp:Label>
+        <asp:Label ID="LblCarReg" runat="server" Text="Please Enter Your Car Reg" style="z-index: 1; left: 13px; top: 150px; position: absolute"></asp:Label>
     
         <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 563px; top: 91px; position: absolute" Text="Booking Date"></asp:Label>
         <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 758px; top: 88px; position: absolute" Text="Start Date"></asp:Label>
