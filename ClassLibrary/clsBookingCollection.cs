@@ -87,7 +87,6 @@ namespace ClassLibrary
             // connect to the database
             clsDataConnection DB = new clsDataConnection();
             // set the parameters for the stored procedure
-            DB.AddParameter("@BookingID", mThisBooking.BookingID);
             DB.AddParameter("@TotalPrice", mThisBooking.TotalPrice);
             DB.AddParameter("@BookingApproved", mThisBooking.BookingApproved);
             DB.AddParameter("@DestinationID", mThisBooking.DestinationID);
