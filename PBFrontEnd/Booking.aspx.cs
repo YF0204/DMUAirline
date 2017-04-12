@@ -31,4 +31,9 @@ public partial class Booking : System.Web.UI.Page
         // redirect to the destination page
         Response.Redirect("MakeBooking.aspx");
     }
+
+    void CalculatePrice()
+    {
+
+    }
 }
