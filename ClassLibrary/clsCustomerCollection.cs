@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MyClassLibrary
+namespace ClassLibrary
 {
     public class clsCustomerCollection
     {
