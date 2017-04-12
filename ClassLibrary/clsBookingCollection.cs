@@ -91,7 +91,7 @@ namespace ClassLibrary
             DB.AddParameter("@TotalPrice", mThisBooking.TotalPrice);
             DB.AddParameter("@BookingApproved", mThisBooking.BookingApproved);
             DB.AddParameter("@DestinationID", mThisBooking.DestinationID);
-            // execute the query using the stored procedure
+            // execute the query returning the primary key
             return DB.Execute("sproc_tblBooking_MakeBooking");
         }
     }
