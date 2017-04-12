@@ -456,7 +456,7 @@ namespace MyTestFramework
             string FirstName = "selina";
             string Surname = "Hayat";
             string Address1 = "";
-            Address1 = Address1.PadRight(13, 'a');
+            Address1 = Address1.PadRight(4, 'a');
             string Address2 = "Management office";
             string Postcode = "Le15xu";
             string PhoneNumber = "07734946810";
@@ -630,7 +630,7 @@ namespace MyTestFramework
             string Surname = "Hayat";
             string Address1 = "28 oxford street";
             string Address2 = "";
-            Address2 = Address2.PadRight(13, 'a');
+            Address2 = Address2.PadRight(4, 'a');
             string Postcode = "Le15xu";
             string PhoneNumber = "07734946810";
             string Email = "selinahayat@gmail.com";
