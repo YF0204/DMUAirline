@@ -39,7 +39,6 @@ namespace ClassLibrary
             }
 
         }
-        
         // public property for the BookingList
         public List<clsBooking> BookingList
         {

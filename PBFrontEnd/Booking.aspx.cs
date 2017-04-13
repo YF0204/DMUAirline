@@ -10,7 +10,7 @@ public partial class Booking : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        
     }
 
     void Add()
@@ -30,10 +30,5 @@ public partial class Booking : System.Web.UI.Page
         Add();
         // redirect to the destination page
         Response.Redirect("MakeBooking.aspx");
-    }
-
-    void CalculatePrice()
-    {
-
     }
 }
