@@ -12,6 +12,8 @@ namespace ClassLibrary
         private decimal mTotalPrice;
         // private data member for the DestinationID property
         private Int32 mDestinationID;
+        // private data member for the BookingDate property
+        private DateTime mBookingDate;
 
         // public property for the BookingApproved property
         public bool BookingApproved
@@ -71,6 +73,21 @@ namespace ClassLibrary
             }
         }
 
+        // public property for BookingDate
+        public DateTime BookingDate
+        {
+            get
+            {
+                // return the private data
+                return mBookingDate;
+            }
+            set
+            {
+                // set the value of the private data member
+                mBookingDate = value;
+            }
+        }
+
         public bool Find(int bookingID)
         {
             // create an instance of the data connection class
@@ -87,6 +104,7 @@ namespace ClassLibrary
                 mTotalPrice = Convert.ToDecimal(DB.DataTable.Rows[0]["TotalPrice"]);
                 mBookingApproved = Convert.ToBoolean(DB.DataTable.Rows[0]["BookingApproved"]);
                 mDestinationID = Convert.ToInt32(DB.DataTable.Rows[0]["DestinationID"]);
+                mBookingDate = Convert.ToDateTime(DB.DataTable.Rows[0]["BookingDate"]);
                 // return true
                 return true;
             }

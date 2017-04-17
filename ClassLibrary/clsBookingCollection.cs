@@ -32,6 +32,7 @@ namespace ClassLibrary
                 ABooking.TotalPrice = Convert.ToDecimal(DB.DataTable.Rows[Index]["TotalPrice"]);
                 ABooking.BookingApproved = Convert.ToBoolean(DB.DataTable.Rows[Index]["BookingApproved"]);
                 ABooking.DestinationID = Convert.ToInt32(DB.DataTable.Rows[Index]["DestinationID"]);
+                ABooking.BookingDate = Convert.ToDateTime(DB.DataTable.Rows[Index]["BookingDate"]);
                 // add the record to the private data member
                 mBookingList.Add(ABooking);
                 // go to next record
@@ -89,6 +90,7 @@ namespace ClassLibrary
             DB.AddParameter("@TotalPrice", mThisBooking.TotalPrice);
             DB.AddParameter("@BookingApproved", mThisBooking.BookingApproved);
             DB.AddParameter("@DestinationID", mThisBooking.DestinationID);
+            DB.AddParameter("@BookingDate", mThisBooking.BookingDate);
             // execute the query returning the primary key
             return DB.Execute("sproc_tblBooking_InsertBooking");
         }

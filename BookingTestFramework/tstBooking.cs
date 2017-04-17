@@ -68,6 +68,20 @@ namespace BookingTestFramework
         }
 
         [TestMethod]
+        public void BookingDatePropertyOK()
+        {
+            // create instance of the booking class
+            clsBooking ABooking = new clsBooking();
+            // create test data to assign to the property
+            DateTime TestData;
+            TestData = DateTime.Now.Date;
+            // assign the data to the property
+            ABooking.BookingDate = TestData;
+            // test to see that two values are the same
+            Assert.AreEqual(ABooking.BookingDate, TestData);
+        }
+
+        [TestMethod]
         public void FindBookingMethodOK()
         {
             // create an instance of the class we want to create
