@@ -90,7 +90,7 @@ namespace ClassLibrary
             DB.AddParameter("@BookingApproved", mThisBooking.BookingApproved);
             DB.AddParameter("@DestinationID", mThisBooking.DestinationID);
             // execute the query returning the primary key
-            return DB.Execute("sproc_tblBooking_MakeBooking");
+            return DB.Execute("sproc_tblBooking_InsertBooking");
         }
     }
 }
