@@ -26,6 +26,9 @@
             <footer>
                 Created by Yaseen Fulat
             </footer>
+             <asp:Button ID="btnStaffAccess" runat="server" OnClick="btnStaffAccess_Click" style="z-index: 1; left: 32px; top: 120px; position: absolute" Text="Staff Access" />
+             <asp:Button ID="btnCustomer" runat="server" style="z-index: 1; left: 36px; top: 156px; position: absolute; height: 26px; width: 107px" Text="Customer Log In" />
+             <asp:Button ID="btnHome" runat="server" OnClick="btnHome_Click" style="z-index: 1; left: 35px; top: 80px; position: absolute; height: 30px; width: 107px" Text="Home" />
         </form>
     </body>
 </html>

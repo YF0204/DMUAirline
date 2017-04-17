@@ -11,4 +11,16 @@ public partial class ProjectBank : System.Web.UI.MasterPage
     {
 
     }
+
+    protected void btnStaffAccess_Click(object sender, EventArgs e)
+    {
+        // redirect to the staff access page
+        Response.Redirect("ListOfBookings.aspx");
+    }
+
+    protected void btnHome_Click(object sender, EventArgs e)
+    {
+        // redirect to the main menu (list of destinations)
+        Response.Redirect("MainMenu.aspx");
+    }
 }

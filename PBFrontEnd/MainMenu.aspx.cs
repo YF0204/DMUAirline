@@ -56,7 +56,7 @@ public partial class MainMenu : System.Web.UI.Page
             // get the ID of each destination
             DestinationID = Convert.ToString(Destinations.DestinationList[Index].DestinationID);
             // set up a new object of class list item
-            ListItem NewItem = new ListItem(DestinationName + " " + "£PP" + " " + " " + DestinationPrice + DayFlight + " " + ReturnFlight, DestinationID);
+            ListItem NewItem = new ListItem(DestinationName + " " + "£PP" + " " + " " + DestinationPrice + " " + DayFlight + " " + ReturnFlight, DestinationID);
             // add the item to the list
             lstDestinationPicker.Items.Add(NewItem);
             // increment the index
@@ -64,5 +64,10 @@ public partial class MainMenu : System.Web.UI.Page
         }
         // return the number of records found
         return RecordCount;
+    }
+
+    protected void lstDestinationPicker_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
     }
 }

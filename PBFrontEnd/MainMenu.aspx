@@ -4,7 +4,7 @@
     <p>
     Select a flight to book from the list below:</p>
     <p>
-        <asp:ListBox ID="lstDestinationPicker" runat="server" Height="214px" Width="384px"></asp:ListBox>
+        <asp:ListBox ID="lstDestinationPicker" runat="server" Height="214px" Width="384px" OnSelectedIndexChanged="lstDestinationPicker_SelectedIndexChanged"></asp:ListBox>
         <br />
 </p>
 </asp:Content>
