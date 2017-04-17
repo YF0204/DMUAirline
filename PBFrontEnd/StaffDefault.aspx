@@ -18,9 +18,5 @@
     <p>
         <asp:Label ID="lblError" runat="server"></asp:Label>
     </p>
-    <p>
-        &nbsp;</p>
-    <p>
-        &nbsp;</p>
 </asp:Content>
 

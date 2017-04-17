@@ -12,34 +12,14 @@ namespace ClassLibrary
         // constructor for the class
         public clsBookingCollection()
         {
-            // var for the index
-            Int32 Index = 0;
-            // var to store the record count
-            Int32 RecordCount = 0;
-            // object for data connection
+            // object for data connection class
             clsDataConnection DB = new clsDataConnection();
             // execute the stored procedure
             DB.Execute("sproc_tblBooking_SelectAll");
-            // get the count of records
-            RecordCount = DB.Count;
-            // while there are records to process
-            while (Index < RecordCount)
-            {
-                // create a blank booking
-                clsBooking ABooking = new clsBooking();
-                // read in all the fields from the current record
-                ABooking.BookingID = Convert.ToInt32(DB.DataTable.Rows[Index]["BookingID"]);
-                ABooking.TotalPrice = Convert.ToDecimal(DB.DataTable.Rows[Index]["TotalPrice"]);
-                ABooking.BookingApproved = Convert.ToBoolean(DB.DataTable.Rows[Index]["BookingApproved"]);
-                ABooking.DestinationID = Convert.ToInt32(DB.DataTable.Rows[Index]["DestinationID"]);
-                ABooking.BookingDate = Convert.ToDateTime(DB.DataTable.Rows[Index]["BookingDate"]);
-                // add the record to the private data member
-                mBookingList.Add(ABooking);
-                // go to next record
-                Index++;
-            }
-
+            // populate the array list
+            PopulateArray(DB);       
         }
+
         // public property for the BookingList
         public List<clsBooking> BookingList
         {
@@ -93,6 +73,60 @@ namespace ClassLibrary
             DB.AddParameter("@BookingDate", mThisBooking.BookingDate);
             // execute the query returning the primary key
             return DB.Execute("sproc_tblBooking_InsertBooking");
+        }
+
+        public void Update()
+        {
+            // update an existing record in the database
+            // connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            // set the parameters for the stored procedure
+            DB.AddParameter("@BookingID", mThisBooking.BookingID);
+            DB.AddParameter("@TotalPrice", mThisBooking.TotalPrice);
+            DB.AddParameter("@BookingApproved", mThisBooking.BookingApproved);
+            DB.AddParameter("@DestinationID", mThisBooking.DestinationID);
+            DB.AddParameter("@BookingDate", mThisBooking.BookingDate);
+            // execute the stored procedure
+            DB.Execute("sproc_tblBooking_UpdateBooking");
+        }
+
+        public void FilterByDate()
+        {
+            // connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            // execute the stored procedure
+            DB.Execute("sproc_tblBooking_FilterBookingsByDate");
+            // populate the array list
+            PopulateArray(DB);
+        }
+
+        void PopulateArray(clsDataConnection DB)
+        {
+            // populates the array list based on the data table in the parameter DB
+            // var for the index
+            Int32 Index = 0;
+            // var to store the record count
+            Int32 RecordCount;
+            // get the count of records
+            RecordCount = DB.Count;
+            // clear the private array list
+            mBookingList = new List<clsBooking>();
+            // while there are records to process
+            while (Index < RecordCount)
+            {
+                // create a blank address
+                clsBooking ABooking = new clsBooking();
+                // read in all the fields from the current record
+                ABooking.BookingID = Convert.ToInt32(DB.DataTable.Rows[Index]["BookingID"]);
+                ABooking.TotalPrice = Convert.ToDecimal(DB.DataTable.Rows[Index]["TotalPrice"]);
+                ABooking.BookingApproved = Convert.ToBoolean(DB.DataTable.Rows[Index]["BookingApproved"]);
+                ABooking.DestinationID = Convert.ToInt32(DB.DataTable.Rows[Index]["DestinationID"]);
+                ABooking.BookingDate = Convert.ToDateTime(DB.DataTable.Rows[Index]["BookingDate"]);
+                // add the record to the private data member
+                mBookingList.Add(ABooking);
+                // move to next record
+                Index++;
+            }
         }
     }
 }

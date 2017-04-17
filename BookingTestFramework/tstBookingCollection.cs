@@ -43,6 +43,7 @@ namespace BookingTestFramework
             TestItem.TotalPrice = 198;
             TestItem.BookingApproved = false;
             TestItem.DestinationID = 1;
+            TestItem.BookingDate = DateTime.Now.Date;
             // add the item to the test list
             TestList.Add(TestItem);
             // assign the data to the property
@@ -63,6 +64,7 @@ namespace BookingTestFramework
             TestBooking.TotalPrice = 198;
             TestBooking.BookingApproved = false;
             TestBooking.DestinationID = 1;
+            TestBooking.BookingDate = DateTime.Now.Date;
             // assign the data to the property
             AllBookings.ThisBooking = TestBooking;
             // test to see that the two values are the same
@@ -83,6 +85,7 @@ namespace BookingTestFramework
             TestItem.TotalPrice = 198;
             TestItem.BookingApproved = false;
             TestItem.DestinationID = 1;
+            TestItem.BookingDate = DateTime.Now.Date;
             // add the item to the test list
             TestList.Add(TestItem);
             // assign the data to the property
@@ -105,6 +108,7 @@ namespace BookingTestFramework
             TestItem.TotalPrice = 200;
             TestItem.BookingApproved = false;
             TestItem.DestinationID = 2;
+            TestItem.BookingDate = DateTime.Now.Date;
             // set ThisBooking to the test data
             Bookings.ThisBooking = TestItem;
             // add the record
@@ -114,6 +118,41 @@ namespace BookingTestFramework
             // find the record
             Bookings.ThisBooking.Find(PrimaryKey);
             // test to see that the two values are the same
+            Assert.AreEqual(Bookings.ThisBooking, TestItem);
+        }
+
+        [TestMethod]
+        public void UpdateBookingMethodOK()
+        {
+            // create an instance of the booking collection class
+            clsBookingCollection Bookings = new clsBookingCollection();
+            // create item of test data
+            clsBooking TestItem = new clsBooking();
+            // var to store primary key
+            Int32 PrimaryKey = 0;
+            // set the properties
+            TestItem.TotalPrice = 1000;
+            TestItem.BookingApproved = false;
+            TestItem.DestinationID = 6;
+            TestItem.BookingDate = DateTime.Now.Date;
+            // set ThisBooking to the test data
+            Bookings.ThisBooking = TestItem;
+            // add the record
+            PrimaryKey = Bookings.Add();
+            // set the primary key of the test data
+            TestItem.BookingID = PrimaryKey;
+            // modify the test data
+            TestItem.TotalPrice = 1500;
+            TestItem.BookingApproved = true;
+            TestItem.DestinationID = 12;
+            TestItem.BookingDate = DateTime.Now.Date.AddDays(1);
+            // set the record based on the new test data
+            Bookings.ThisBooking = TestItem;
+            // update the record
+            Bookings.Update();
+            // find the record
+            Bookings.ThisBooking.Find(PrimaryKey);
+            // test to see ThisBooking matches the test data
             Assert.AreEqual(Bookings.ThisBooking, TestItem);
         }
     }
