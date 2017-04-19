@@ -1,12 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProjectBank.master" AutoEventWireup="true" CodeFile="ListOfBookings.aspx.cs" Inherits="ListOfBookings" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <asp:ListBox ID="lstBookings" runat="server" Height="255px" Width="288px"></asp:ListBox>
+    <asp:ListBox ID="lstBookings" runat="server" Height="213px" Width="338px"></asp:ListBox>
+    <asp:Label ID="lblError" runat="server" style="position: absolute; z-index: 1; left: 199px; top: 299px"></asp:Label>
     <br />
     <br />
-    <asp:Button ID="btnUpdate" runat="server" Text="Update Booking" />
-    <asp:Button ID="btnFilterDate" runat="server" Text="Filter Bookings by Date" />
-    <br />
-    <br />
-</asp:Content>
+    <asp:Button ID="btnUpdate" runat="server" Text="Update Booking" OnClick="btnUpdate_Click" />
+    <asp:Button ID="btnFilterDate" runat="server" Text="Filter Bookings by Date" OnClick="btnFilterDate_Click" />
+    </asp:Content>
 
