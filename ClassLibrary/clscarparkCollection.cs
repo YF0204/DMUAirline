@@ -72,6 +72,8 @@ namespace ClassLibrary
             DB.AddParameter("@StartDate", mThisCarPark.StartDate);
             DB.AddParameter("@EndDate", mThisCarPark.EndDate);
             DB.AddParameter("@Location", mThisCarPark.Location);
+            DB.AddParameter("@Price", mThisCarPark.Price);
+
             //excute the query returning the primary key value
             return DB.Execute("SPROC_tblCarParkReservation_Insert");
         }
@@ -98,6 +100,7 @@ namespace ClassLibrary
             DB.AddParameter("@StartDate", mThisCarPark.StartDate);
             DB.AddParameter("@EndDate", mThisCarPark.EndDate);
             DB.AddParameter("@Location", mThisCarPark.Location);
+            DB.AddParameter("@Price", mThisCarPark.Price);
             //excute the stored procedur
             DB.Execute("SPROC_tblCarParkReservation_Update");
 

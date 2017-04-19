@@ -29,17 +29,24 @@ public partial class AddCarRes : System.Web.UI.Page
     {
         // create an instance of the car park collection class
         clscarparkCollection Reservation = new clscarparkCollection();
+        //DateTime startDate = Convert.ToDateTime(txtStartDate.Text);
+        //DateTime endDate = Convert.ToDateTime(txtEndDate.Text);
+        //Int32 NOD = Convert.ToInt32((endDate - startDate).Days);
         // validate the data
         Boolean OK = Reservation.ThisCarPark.Valid(txtBookingDate.Text, txtCarReg.Text, txtStartDate.Text, txtEndDate.Text, ddlLocation.Text);
         // if the date is OK then add it to the object
         if (OK == true)
         {
             // get the data entered by the user
+            DateTime startDate = Convert.ToDateTime(txtStartDate.Text);
+            DateTime endDate = Convert.ToDateTime(txtEndDate.Text);
+            Int32 NOD = Convert.ToInt32((endDate - startDate).Days);
             Reservation.ThisCarPark.BookingDate = Convert.ToDateTime(txtBookingDate.Text);
             Reservation.ThisCarPark.CarReg = txtCarReg.Text;
             Reservation.ThisCarPark.StartDate = Convert.ToDateTime(txtStartDate.Text);
             Reservation.ThisCarPark.EndDate = Convert.ToDateTime(txtEndDate.Text);
             Reservation.ThisCarPark.Location = Convert.ToString(ddlLocation.SelectedValue);
+            Reservation.ThisCarPark.Price = Convert.ToDecimal(NOD * 10);
             // add the record
             Reservation.Add();
             Response.Redirect("CarResDefault.aspx");
@@ -57,6 +64,10 @@ public partial class AddCarRes : System.Web.UI.Page
     {
         //create an instance of the car reg
         clscarparkCollection Reservation = new clscarparkCollection();
+        DateTime startDate = Convert.ToDateTime(txtStartDate);
+        DateTime endDate = Convert.ToDateTime(txtEndDate);
+        Int32 NOD = Convert.ToInt32((endDate - startDate).Days);
+        // validate the data
         //validate the data on the web form
         Boolean OK = Reservation.ThisCarPark.Valid(txtBookingDate.Text, txtCarReg.Text, txtStartDate.Text, txtEndDate.Text, ddlLocation.Text);
         //if the data is ok then add to the object
@@ -70,6 +81,7 @@ public partial class AddCarRes : System.Web.UI.Page
             Reservation.ThisCarPark.StartDate = Convert.ToDateTime(txtStartDate.Text);
             Reservation.ThisCarPark.EndDate = Convert.ToDateTime(txtEndDate.Text);
             Reservation.ThisCarPark.Location = Convert.ToString(ddlLocation.SelectedValue);
+            Reservation.ThisCarPark.Price = Convert.ToDecimal(NOD * 10);
             //update the record 
             Reservation.Update();
             Response.Redirect("CarResDefault.aspx");

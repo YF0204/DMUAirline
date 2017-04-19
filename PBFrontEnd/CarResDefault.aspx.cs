@@ -43,6 +43,7 @@ public partial class CarResDefault : System.Web.UI.Page
         DateTime BookingDate;
         DateTime StartDate;
         DateTime EndDate;
+        string Price;
         // var for Index
         Int32 Index = 0;
         // clear the list of any existing item
@@ -60,7 +61,8 @@ public partial class CarResDefault : System.Web.UI.Page
             BookingDate = Convert.ToDateTime(carreg.CarParkList[Index].BookingDate.ToShortDateString());
             StartDate = Convert.ToDateTime(carreg.CarParkList[Index].StartDate);
             EndDate = Convert.ToDateTime(carreg.CarParkList[Index].EndDate);
-            ListItem NewItem = new ListItem(CarReg + "" + BookingDate.ToShortDateString() + " " + StartDate.ToShortDateString() + "  " + EndDate.ToShortDateString() ,CarParkId.ToString());
+            Price = Convert.ToString(carreg.CarParkList[Index].Price);
+            ListItem NewItem = new ListItem(CarReg + "" + BookingDate.ToShortDateString() + " " + StartDate.ToShortDateString() + "  " + EndDate.ToShortDateString()+ " " + Price ,CarParkId.ToString());
             // add the item to the list
             LstCarReg.Items.Add(NewItem);
             // increment the index

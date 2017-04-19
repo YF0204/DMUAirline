@@ -16,6 +16,8 @@ namespace ClassLibrary
         private string mLocation;
         //private data member for the start date 
         private DateTime mStartDate;
+        //private data member for the Price 
+        private decimal mPrice;
 
         //Matthew was here
         public Int32 carparkid
@@ -85,6 +87,17 @@ namespace ClassLibrary
                 mStartDate = value;
             }
          }
+        public decimal Price
+        {
+            get
+            {
+                return mPrice;
+            }
+            set
+            {
+                mPrice = value;
+            }
+        }
 
         public bool Valid(string bookingDate, string carReg, string startDate, string endDate, string location)
         {
