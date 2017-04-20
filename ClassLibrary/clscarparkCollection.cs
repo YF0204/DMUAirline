@@ -143,6 +143,7 @@ namespace ClassLibrary
                 acarpark.StartDate = Convert.ToDateTime(DB.DataTable.Rows[Index]["StartDate"]);
                 acarpark.EndDate = Convert.ToDateTime(DB.DataTable.Rows[Index]["EndDate"]);
                 acarpark.Location = Convert.ToString(DB.DataTable.Rows[Index]["Location"]);
+                acarpark.Price = Convert.ToDecimal(DB.DataTable.Rows[Index]["Price"]);
                 //add the record to the private data member
                 mCarParkList.Add(acarpark);
                 //point at the next record
