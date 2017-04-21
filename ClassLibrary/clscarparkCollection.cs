@@ -72,6 +72,8 @@ namespace ClassLibrary
             DB.AddParameter("@StartDate", mThisCarPark.StartDate);
             DB.AddParameter("@EndDate", mThisCarPark.EndDate);
             DB.AddParameter("@Location", mThisCarPark.Location);
+            DB.AddParameter("@Price", mThisCarPark.Price);
+
             //excute the query returning the primary key value
             return DB.Execute("SPROC_tblCarParkReservation_Insert");
         }
@@ -98,6 +100,7 @@ namespace ClassLibrary
             DB.AddParameter("@StartDate", mThisCarPark.StartDate);
             DB.AddParameter("@EndDate", mThisCarPark.EndDate);
             DB.AddParameter("@Location", mThisCarPark.Location);
+            DB.AddParameter("@Price", mThisCarPark.Price);
             //excute the stored procedur
             DB.Execute("SPROC_tblCarParkReservation_Update");
 
@@ -140,6 +143,7 @@ namespace ClassLibrary
                 acarpark.StartDate = Convert.ToDateTime(DB.DataTable.Rows[Index]["StartDate"]);
                 acarpark.EndDate = Convert.ToDateTime(DB.DataTable.Rows[Index]["EndDate"]);
                 acarpark.Location = Convert.ToString(DB.DataTable.Rows[Index]["Location"]);
+                acarpark.Price = Convert.ToDecimal(DB.DataTable.Rows[Index]["Price"]);
                 //add the record to the private data member
                 mCarParkList.Add(acarpark);
                 //point at the next record
