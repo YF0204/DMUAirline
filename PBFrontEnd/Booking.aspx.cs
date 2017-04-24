@@ -10,15 +10,20 @@ public partial class Booking : System.Web.UI.Page
 {
     // var for primary key with page level scope
     Int32 BookingID;
+    Int32 DestinationID;
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        // on load add today's date to the booking date textbox
-        // txtBookingDate.Text = DateTime.Now.Date.ToShortDateString();
-        // get the number of the booking to be processed
-        BookingID = Convert.ToInt32(Session["BookingID"]);
         if (IsPostBack == false)
         {
+            // get the number of the booking to be processed
+            BookingID = Convert.ToInt32(Session["BookingID"]);
+            string dest = Convert.ToString(Session["Dest"]);
+            string price = Convert.ToString(Session["Price"]);
+            txtDestination.Text = dest;
+            txtPP.Text = price;
+            // on load add today's date to the booking date textbox
+            txtBookingDate.Text = DateTime.Now.Date.ToShortDateString();
             // if this is not a new record
             if (BookingID != -1)
             {
@@ -89,5 +94,16 @@ public partial class Booking : System.Web.UI.Page
     void CalculatePrice()
     {
         // number of tickets chosen in the dropdown box times by the price person value of the selected destination
+        decimal Total;
+        decimal PP = Convert.ToDecimal(txtPP.Text);
+        int Tickets = Convert.ToInt32(ddlTickets.SelectedValue);
+        Total = PP * Tickets;
+        Total = Convert.ToDecimal(txtTotalPrice.Text);
+    }
+
+    // calculate button click event
+    protected void btnCalculate_Click(object sender, EventArgs e)
+    {
+        CalculatePrice();
     }
 }

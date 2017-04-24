@@ -10,14 +10,33 @@ public partial class MakeBooking : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        // display the destinations in the list box
-        DisplayDestinations();
+
+        if (!Page.IsPostBack)
+        {
+            // display the destinations in the list box
+            DisplayDestinations();
+        }
     }
 
     protected void btnMakeBooking_Click(object sender, EventArgs e)
     {
         // store -1 into the session object to indicate this is a new record
         Session["BookingID"] = -1;
+        // select the index of the record from the list box
+        int index = lstPickDestination.SelectedIndex;
+        // get the text of the record
+        string info = lstPickDestination.Items[index].Text;
+        // pick apart the record to get the name and price
+        int poundSymbolPosition = info.IndexOf("£");
+        // var for destination name
+        string destinationName = info.Substring(0, poundSymbolPosition);
+        // start after the £PP
+        int priceStartPosition = poundSymbolPosition + 4; 
+        // var for destination price
+        string destinationPrice = info.Substring(priceStartPosition, info.Length - priceStartPosition);
+        // place the destination Name and Price into session objects
+        Session["Dest"] = destinationName;
+        Session["Price"] = destinationPrice;
         // redirect to the booking page
         Response.Redirect("Booking.aspx");
     }
