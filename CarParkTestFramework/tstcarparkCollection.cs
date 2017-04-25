@@ -198,17 +198,17 @@ namespace ClassLibrary
             //var to store outcome
             Boolean Ok = true;
             //apply a car reg that doesnt exit
-            FilterCarRegs.FilterByCarReg("oooo ooo");
+            FilterCarRegs.FilterByCarReg("bbgg ttt");
             //check that the coorect number of records are found
-            if (FilterCarRegs.Count == 3)
+            if (FilterCarRegs.Count == 2)
             {
                 //check that the first record is id 1 
-                if (FilterCarRegs.CarParkList[0].carparkid != 6)
+                if (FilterCarRegs.CarParkList[0].carparkid != 151)
                 {
                     Ok = false;
                 }
                 //check that the first record  is id 2
-                if (FilterCarRegs.CarParkList[1].carparkid != 7)
+                if (FilterCarRegs.CarParkList[1].carparkid != 152)
                 {
                     Ok = false;
                 }

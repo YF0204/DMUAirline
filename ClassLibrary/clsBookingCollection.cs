@@ -89,6 +89,7 @@ namespace ClassLibrary
             DB.AddParameter("@DestinationID", mThisBooking.DestinationID);
             DB.AddParameter("@BookingDate", mThisBooking.BookingDate);
             DB.AddParameter("@CarParkID", mThisBooking.CarParkID);
+            DB.AddParameter("@CustomerNo", mThisBooking.CustomerNo);
             // execute the stored procedure
             DB.Execute("sproc_tblBooking_UpdateBooking");
         }
