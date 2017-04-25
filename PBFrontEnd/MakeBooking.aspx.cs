@@ -34,9 +34,12 @@ public partial class MakeBooking : System.Web.UI.Page
         int priceStartPosition = poundSymbolPosition + 4; 
         // var for destination price
         string destinationPrice = info.Substring(priceStartPosition, info.Length - priceStartPosition);
+        // var for destination id
+        string destinationID = lstPickDestination.Items[index].Value;
         // place the destination Name and Price into session objects
         Session["Dest"] = destinationName;
         Session["Price"] = destinationPrice;
+        Session["ID"] = destinationID;
         // redirect to the booking page
         Response.Redirect("Booking.aspx");
     }

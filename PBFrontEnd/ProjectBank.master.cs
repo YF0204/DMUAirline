@@ -21,6 +21,6 @@ public partial class ProjectBank : System.Web.UI.MasterPage
     protected void btnHome_Click(object sender, EventArgs e)
     {
         // redirect to the main menu (list of destinations)
-        Response.Redirect("MainMenu.aspx");
+        Response.Redirect("MakeBooking.aspx");
     }
 }

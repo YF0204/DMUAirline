@@ -14,16 +14,21 @@ public partial class Booking : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        // get the number of the booking to be processed
+        BookingID = Convert.ToInt32(Session["BookingID"]);
         if (IsPostBack == false)
         {
-            // get the number of the booking to be processed
-            BookingID = Convert.ToInt32(Session["BookingID"]);
+            // get the data from the session objects
             string dest = Convert.ToString(Session["Dest"]);
             string price = Convert.ToString(Session["Price"]);
+            string id = Convert.ToString(Session["ID"]);
+            // place the information into the text boxes
             txtDestination.Text = dest;
             txtPP.Text = price;
-            // on load add today's date to the booking date textbox
+            txtID.Text = id;
+            // on load add today's date to the booking date textbox and false to booking approved
             txtBookingDate.Text = DateTime.Now.Date.ToShortDateString();
+            txtBookingApproved.Text = Convert.ToString(false);
             // if this is not a new record
             if (BookingID != -1)
             {
@@ -38,7 +43,7 @@ public partial class Booking : System.Web.UI.Page
         // create an instance of the class file
         clsBookingCollection Booking = new clsBookingCollection();
         // get the data
-        Booking.ThisBooking.DestinationID = Convert.ToInt32(txtDestination.Text);
+        Booking.ThisBooking.DestinationID = Convert.ToInt32(txtID.Text);
         Booking.ThisBooking.TotalPrice = Convert.ToDecimal(txtTotalPrice.Text);
         Booking.ThisBooking.BookingApproved = Convert.ToBoolean(txtBookingApproved.Text);
         Booking.ThisBooking.BookingDate = Convert.ToDateTime(txtBookingDate.Text);
@@ -53,7 +58,7 @@ public partial class Booking : System.Web.UI.Page
         // find the record to update
         Booking.ThisBooking.Find(BookingID);
         // get the data entered
-        Booking.ThisBooking.DestinationID = Convert.ToInt32(txtDestination.Text);
+        Booking.ThisBooking.DestinationID = Convert.ToInt32(txtID.Text);
         Booking.ThisBooking.TotalPrice = Convert.ToDecimal(txtTotalPrice.Text);
         Booking.ThisBooking.BookingApproved = Convert.ToBoolean(txtBookingApproved.Text);
         Booking.ThisBooking.BookingDate = Convert.ToDateTime(txtBookingDate.Text);
@@ -98,7 +103,7 @@ public partial class Booking : System.Web.UI.Page
         decimal PP = Convert.ToDecimal(txtPP.Text);
         int Tickets = Convert.ToInt32(ddlTickets.SelectedValue);
         Total = PP * Tickets;
-        Total = Convert.ToDecimal(txtTotalPrice.Text);
+        txtTotalPrice.Text = Convert.ToString(Total);
     }
 
     // calculate button click event
