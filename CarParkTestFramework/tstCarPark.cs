@@ -112,7 +112,7 @@ namespace ClassLibrary
             // boolean variable 
             Boolean Found = false;
             // test data to use with the method
-            Int32 CarParkID = 2;
+            Int32 CarParkID = 151;
             // execute the method
             Found = Acar.Find(CarParkID);
             // test to see that the result is correct
@@ -129,11 +129,11 @@ namespace ClassLibrary
             // boolean variable
             Boolean OK = true;
             // create test data to pass through
-            Int32 CarParkID = 2;
+            Int32 CarParkID = 151;
             // execute the method
             Found = Acar.Find(CarParkID);
             // check the car park id
-            if (Acar.carparkid != 2)
+            if (Acar.carparkid != 151)
             {
                 OK = false;
             }
@@ -150,11 +150,11 @@ namespace ClassLibrary
             // boolean variable
             Boolean OK = true;
             // create test data to pass through
-            Int32 CarParkID = 7;
+            Int32 CarParkID = 151;
             // execute the method
             Found = Acar.Find(CarParkID);
             // check the car park id
-            if (Acar.CarReg != "oooo ooo")
+            if (Acar.CarReg != "bbgg ttt")
             {
                 OK = false;
             }
@@ -171,11 +171,11 @@ namespace ClassLibrary
             // boolean variable
             Boolean OK = true;
             // create test data to pass through
-            Int32 CarParkID = 2;
+            Int32 CarParkID = 151;
             // execute the method
             Found = Acar.Find(CarParkID);
             // check the car park id
-            if (Acar.BookingDate != Convert.ToDateTime("14/02/2017"))
+            if (Acar.BookingDate != Convert.ToDateTime("20/04/2017"))
             {
                 OK = false;
             }
@@ -192,11 +192,11 @@ namespace ClassLibrary
             // boolean variable
             Boolean OK = true;
             // create test data to pass through
-            Int32 CarParkID = 2;
+            Int32 CarParkID = 151;
             // execute the method
             Found = Acar.Find(CarParkID);
             // check the car park id
-            if (Acar.StartDate != Convert.ToDateTime("16/02/2017"))
+            if (Acar.StartDate != Convert.ToDateTime("21/04/2017"))
             {
                 OK = false;
             }
@@ -213,11 +213,11 @@ namespace ClassLibrary
             // boolean variable
             Boolean OK = true;
             // create test data to pass through
-            Int32 CarParkID = 2;
+            Int32 CarParkID = 151;
             // execute the method
             Found = Acar.Find(CarParkID);
             // check the car park id
-            if (Acar.EndDate != Convert.ToDateTime("21/02/2017"))
+            if (Acar.EndDate != Convert.ToDateTime("25/04/2017"))
             {
                 OK = false;
             }
@@ -234,7 +234,7 @@ namespace ClassLibrary
             // boolean variable
             Boolean OK = true;
             // create test data to pass through
-            Int32 CarParkID = 2;
+            Int32 CarParkID = 151;
             // execute the method
             Found = Acar.Find(CarParkID);
             // check the car park id

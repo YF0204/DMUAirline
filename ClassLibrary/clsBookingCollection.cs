@@ -71,6 +71,8 @@ namespace ClassLibrary
             DB.AddParameter("@BookingApproved", mThisBooking.BookingApproved);
             DB.AddParameter("@DestinationID", mThisBooking.DestinationID);
             DB.AddParameter("@BookingDate", mThisBooking.BookingDate);
+            DB.AddParameter("@CarParkID", mThisBooking.CarParkID);
+            DB.AddParameter("@CustomerNo", mThisBooking.CustomerNo);
             // execute the query returning the primary key
             return DB.Execute("sproc_tblBooking_InsertBooking");
         }
@@ -86,6 +88,8 @@ namespace ClassLibrary
             DB.AddParameter("@BookingApproved", mThisBooking.BookingApproved);
             DB.AddParameter("@DestinationID", mThisBooking.DestinationID);
             DB.AddParameter("@BookingDate", mThisBooking.BookingDate);
+            DB.AddParameter("@CarParkID", mThisBooking.CarParkID);
+            DB.AddParameter("@CustomerNo", mThisBooking.CustomerNo);
             // execute the stored procedure
             DB.Execute("sproc_tblBooking_UpdateBooking");
         }
@@ -122,6 +126,8 @@ namespace ClassLibrary
                 ABooking.BookingApproved = Convert.ToBoolean(DB.DataTable.Rows[Index]["BookingApproved"]);
                 ABooking.DestinationID = Convert.ToInt32(DB.DataTable.Rows[Index]["DestinationID"]);
                 ABooking.BookingDate = Convert.ToDateTime(DB.DataTable.Rows[Index]["BookingDate"]);
+                ABooking.CarParkID = Convert.ToInt32(DB.DataTable.Rows[Index]["CarParkID"]);
+                ABooking.CustomerNo = Convert.ToInt32(DB.DataTable.Rows[Index]["CustomerNo"]);
                 // add the record to the private data member
                 mBookingList.Add(ABooking);
                 // move to next record

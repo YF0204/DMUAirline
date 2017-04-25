@@ -98,7 +98,7 @@ namespace ClassLibrary
             Assert.IsTrue(Ok);
                 
         }
-        [TestMethod]
+       
         public void FindmethodOk()
         {
             // create an instance of a class we want to create

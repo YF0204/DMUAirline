@@ -2,10 +2,10 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <p>
-    Select a flight to book from the list below:</p>
+        Welcome to the DMU Airline Booking System. From here, you can book flights to many destinations around the world.</p>
     <p>
-        <asp:ListBox ID="lstDestinationPicker" runat="server" Height="214px" Width="384px" OnSelectedIndexChanged="lstDestinationPicker_SelectedIndexChanged"></asp:ListBox>
-        <br />
+        <asp:Button ID="btnDestinations" runat="server" Text="Destinations" />
+        <asp:Button ID="btnStaffAccess" runat="server" Text="Staff Access" />
 </p>
 </asp:Content>
 

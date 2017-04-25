@@ -44,6 +44,8 @@ namespace BookingTestFramework
             TestItem.BookingApproved = false;
             TestItem.DestinationID = 1;
             TestItem.BookingDate = DateTime.Now.Date;
+            TestItem.CarParkID = 151;
+            TestItem.CustomerNo = 1;
             // add the item to the test list
             TestList.Add(TestItem);
             // assign the data to the property
@@ -65,6 +67,8 @@ namespace BookingTestFramework
             TestBooking.BookingApproved = false;
             TestBooking.DestinationID = 1;
             TestBooking.BookingDate = DateTime.Now.Date;
+            TestBooking.CarParkID = 151;
+            TestBooking.CustomerNo = 1;
             // assign the data to the property
             AllBookings.ThisBooking = TestBooking;
             // test to see that the two values are the same
@@ -86,6 +90,8 @@ namespace BookingTestFramework
             TestItem.BookingApproved = false;
             TestItem.DestinationID = 1;
             TestItem.BookingDate = DateTime.Now.Date;
+            TestItem.CarParkID = 151;
+            TestItem.CustomerNo = 1;
             // add the item to the test list
             TestList.Add(TestItem);
             // assign the data to the property
@@ -109,6 +115,8 @@ namespace BookingTestFramework
             TestItem.BookingApproved = false;
             TestItem.DestinationID = 2;
             TestItem.BookingDate = DateTime.Now.Date;
+            TestItem.CarParkID = 151;
+            TestItem.CustomerNo = 1;
             // set ThisBooking to the test data
             Bookings.ThisBooking = TestItem;
             // add the record
@@ -131,10 +139,12 @@ namespace BookingTestFramework
             // var to store primary key
             Int32 PrimaryKey = 0;
             // set the properties
-            TestItem.TotalPrice = 1000;
+            TestItem.TotalPrice = 198;
             TestItem.BookingApproved = false;
-            TestItem.DestinationID = 6;
+            TestItem.DestinationID = 1;
             TestItem.BookingDate = DateTime.Now.Date;
+            TestItem.CarParkID = 151;
+            TestItem.CustomerNo = 1;
             // set ThisBooking to the test data
             Bookings.ThisBooking = TestItem;
             // add the record
@@ -145,7 +155,9 @@ namespace BookingTestFramework
             TestItem.TotalPrice = 1500;
             TestItem.BookingApproved = true;
             TestItem.DestinationID = 12;
-            TestItem.BookingDate = DateTime.Now.Date.AddDays(1);
+            TestItem.BookingDate = DateTime.Now.Date;
+            TestItem.CarParkID = 154;
+            TestItem.CustomerNo = 5;
             // set the record based on the new test data
             Bookings.ThisBooking = TestItem;
             // update the record

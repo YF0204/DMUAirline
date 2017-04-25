@@ -12,6 +12,10 @@ namespace ClassLibrary
         private decimal mTotalPrice;
         // private data member for the DestinationID property
         private Int32 mDestinationID;
+        // private data member for the CustomerNo property
+        private Int32 mCustomerNo;
+        // private data member for the CarParkID property
+        private Int32 mCarParkID;
         // private data member for the BookingDate property
         private DateTime mBookingDate;
 
@@ -73,6 +77,36 @@ namespace ClassLibrary
             }
         }
 
+        // public property for the DestinationID foreign key
+        public Int32 CustomerNo
+        {
+            get
+            {
+                // return the private data
+                return mCustomerNo;
+            }
+            set
+            {
+                // set the value of the private data member
+                mCustomerNo = value;
+            }
+        }
+
+        // public property for the DestinationID foreign key
+        public Int32 CarParkID
+        {
+            get
+            {
+                // return the private data
+                return mCarParkID;
+            }
+            set
+            {
+                // set the value of the private data member
+                mCarParkID = value;
+            }
+        }
+
         // public property for BookingDate
         public DateTime BookingDate
         {
@@ -105,6 +139,8 @@ namespace ClassLibrary
                 mBookingApproved = Convert.ToBoolean(DB.DataTable.Rows[0]["BookingApproved"]);
                 mDestinationID = Convert.ToInt32(DB.DataTable.Rows[0]["DestinationID"]);
                 mBookingDate = Convert.ToDateTime(DB.DataTable.Rows[0]["BookingDate"]);
+                mCustomerNo = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerNo"]);
+                mCarParkID = Convert.ToInt32(DB.DataTable.Rows[0]["CarParkID"]);
                 // return true
                 return true;
             }

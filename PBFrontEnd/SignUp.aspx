@@ -14,7 +14,7 @@
     
     </div>
     
-        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" ContinueDestinationPageUrl="Login.aspx" style="height: 486px; width: 515px; z-index: 1; left: 689px; top: 271px; position: absolute;">
+        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" ContinueDestinationPageUrl="MakeBooking.aspx" style="height: 486px; width: 515px; z-index: 1; left: 689px; top: 271px; position: absolute;">
             <WizardSteps>
                 <asp:CreateUserWizardStep runat="server" />
                 <asp:CompleteWizardStep runat="server" />
