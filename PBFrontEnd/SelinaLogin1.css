@@ -1,0 +1,53 @@
+﻿body
+{
+    background-color: lightskyblue;
+}
+
+header
+ {  width:100%;
+	height:auto;
+	font-family: 'Calibri', Helvetica, Arial, sans-serif;
+	font-size: 500%;
+	font-weight:bolder;
+	text-align:center;
+
+}
+article {
+    height: 10%;
+    position: fixed;
+    width: 100%;
+    top: 40%;
+    left: 40%;
+    font-family: 'Calibri', Helvetica, Arial, sans-serif;
+    font-size: 140%;
+}
+img {
+    left: 50%;
+    top: 10%;
+}
+footer
+{
+    background-color: #600;
+    height: 10%;
+    position: fixed;
+    width: 100%;
+    top: 90%;
+    left: 0%;
+}
+ #LnkButtion
+        {
+            padding: 2px 20px;
+            text-decoration: none;
+            border: solid 1px black;
+            background-color: #ababab;
+        }
+.LnkButtion:hover
+        {
+            border: solid 1px Black;
+            background-color: #ffffff;
+        }
+
+#logo{
+    text-align: center;
+        
+}

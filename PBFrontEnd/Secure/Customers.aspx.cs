@@ -6,9 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using ClassLibrary;
 
-public partial class CustomersDefault : System.Web.UI.Page
+public partial class Customers : System.Web.UI.Page
 {
-
     protected void Page_Load(object sender, EventArgs e)
     {
         if (IsPostBack == false)
@@ -19,6 +18,7 @@ public partial class CustomersDefault : System.Web.UI.Page
             LblError.Text = Displaycustomers("") + " records found";
         }
     }
+
     // function to populate the list box
     Int32 Displaycustomers(string CustomerFilter)
     {
@@ -43,7 +43,7 @@ public partial class CustomersDefault : System.Web.UI.Page
         // loop through each record found using the index
         while (Index < RecordCount)
         {
-
+            
             // get the last name of the customer
             Surname = Convert.ToString(Customers.CustomerList[Index].Surname);
             // get the email of the customer
@@ -51,7 +51,7 @@ public partial class CustomersDefault : System.Web.UI.Page
             // get the ID of the Customer
             CustomerNo = Convert.ToString(Customers.CustomerList[Index].CustomerNo);
             // set up a new object of class list item
-            ListItem NewItem = new ListItem(Surname + "," + Email, CustomerNo);
+            ListItem NewItem = new ListItem( Surname +"," + Email, CustomerNo);
             // add the item to the list
             lstCustomers.Items.Add(NewItem);
             // increment the index
@@ -76,7 +76,6 @@ public partial class CustomersDefault : System.Web.UI.Page
     //}
 
 
-
     protected void Add_Click1(object sender, EventArgs e)
     {
         //store -1 into the session object to indicate this is a new record 
@@ -84,8 +83,6 @@ public partial class CustomersDefault : System.Web.UI.Page
         //redirect to the data entry page
         Response.Redirect("CustomerSignUp.aspx");
     }
-
-
 
     protected void BtnUpdate_Click(object sender, EventArgs e)
     {
@@ -108,9 +105,9 @@ public partial class CustomersDefault : System.Web.UI.Page
         }
     }
 
-
     protected void BtnSearchSurname_Click(object sender, EventArgs e)
     {
+
         // event handler for searching for staff members
         // declare var to store the record count
         Int32 RecordCount;
@@ -118,5 +115,13 @@ public partial class CustomersDefault : System.Web.UI.Page
         RecordCount = Displaycustomers(txtSurname.Text);
         // display the number of records found
         LblError.Text = RecordCount + " records found";
+
     }
+
 }
+
+
+
+
+
+

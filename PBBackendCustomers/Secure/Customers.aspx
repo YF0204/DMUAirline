@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="CustomersDefault.aspx.cs" Inherits="CustomersDefault" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Customers.aspx.cs" Inherits="Customers" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link href="SelinaStylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="CustomerLogin.css" rel="stylesheet" type="text/css" />
 
 </head>
 <body>
@@ -20,13 +20,17 @@
             </br>
             
                     <asp:TextBox ID="txtSurname" runat="server" style="z-index: 1; width: 300px"></asp:TextBox>
-               </br> 
-                &nbsp;&nbsp;&nbsp; 
                             
             
             
         
-        <asp:Button ID="BtnSearchSurname" runat="server" OnClick="BtnSearchSurname_Click" Text="Search Surname" style="z-index: 1; left: 325px; top: 681px; position: absolute; height: 59px; width: 207px; margin-bottom: 22px;" />
+        <asp:Button ID="BtnSearchSurname" runat="server" OnClick="BtnSearchSurname_Click" Text="Search Surname" style="z-index: 1; left: 332px; top: 693px; position: absolute; height: 40px; width: 224px" />
+            
+            
+            
+        
+                </br> 
+                &nbsp;&nbsp;&nbsp;
             
             
             
