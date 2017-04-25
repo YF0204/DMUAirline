@@ -65,7 +65,7 @@ public partial class CustomerSignUp : System.Web.UI.Page
         }
         //all done so redirect back to the main page
 
-        Response.Redirect("MakeBooking.aspx");
+        Response.Redirect("AddCarRes.aspx");
 
     }
     //function for updateing records

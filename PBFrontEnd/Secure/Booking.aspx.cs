@@ -12,12 +12,14 @@ public partial class Booking : System.Web.UI.Page
     Int32 BookingID;
     Int32 DestinationID;
     Int32 CustomerNo;
+    Int32 CarParkID;
 
     protected void Page_Load(object sender, EventArgs e)
     {
         // get the number of the booking to be processed
         BookingID = Convert.ToInt32(Session["BookingID"]);
         CustomerNo = Convert.ToInt32(Session["CustomerNo"]);
+        CarParkID = Convert.ToInt32(Session["CarParkID"]);
         if (IsPostBack == false)
         {
             // get the data from the session objects
@@ -49,6 +51,8 @@ public partial class Booking : System.Web.UI.Page
         Booking.ThisBooking.TotalPrice = Convert.ToDecimal(txtTotalPrice.Text);
         Booking.ThisBooking.BookingApproved = Convert.ToBoolean(txtBookingApproved.Text);
         Booking.ThisBooking.BookingDate = Convert.ToDateTime(txtBookingDate.Text);
+        Booking.ThisBooking.CustomerNo = Convert.ToInt32(Session["CustomerNo"]);
+        Booking.ThisBooking.CarParkID = Convert.ToInt32(Session["CarParkID"]);
         // add the record
         Booking.Add();
     }
@@ -81,7 +85,7 @@ public partial class Booking : System.Web.UI.Page
             Update();
         }
         // redirect to the destination page
-        Response.Redirect("AddCarRes.aspx");
+        Response.Redirect("BookingComplete.aspx");
     }
 
     void DisplayBooking()
