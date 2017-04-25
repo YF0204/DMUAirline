@@ -126,13 +126,19 @@ public partial class AddCarRes : System.Web.UI.Page
             Update();
         }
         //all done so redirect  back to the main page
-        //Response.Redirect("CarResDefault.aspx");
+        Response.Redirect("BookingComplete.aspx");
        
     }
 
     protected void BtnCancel_Click(object sender, EventArgs e)
     {
         // redirect back to the main page
-        Response.Redirect("CarResDefault.aspx");
+        Response.Redirect("MakeBooking.aspx");
+    }
+
+    protected void btnSkip_Click(object sender, EventArgs e)
+    {
+        //all done so redirect  back to the main page
+        Response.Redirect("BookingComplete.aspx");
     }
 }

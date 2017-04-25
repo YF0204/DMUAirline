@@ -50,12 +50,12 @@
         <br />
         <br />
         <br />
+        <asp:Button ID="btnSkip" runat="server" OnClick="btnSkip_Click" style="z-index: 1; top: 355px; position: absolute; left: 30px" Text="Skip Car Park Reservation" />
         <br />
         <br />
         <br />
         <br />
-        <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" Text="OK" style="z-index: 1; left: 11px; top: 364px; position: absolute" />
-        <asp:Button ID="BtnCancel" runat="server" OnClick="BtnCancel_Click" style="z-index: 1; left: 60px; top: 363px; position: absolute; width: 62px; height: 24px" Text="Cancel" />
+        <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" Text="Confirm Reservation" style="z-index: 1; left: 271px; top: 354px; position: absolute" />
     
     </div>
     </form>
