@@ -65,9 +65,4 @@ public partial class MainMenu : System.Web.UI.Page
         // return the number of records found
         return RecordCount;
     }
-
-    protected void lstDestinationPicker_SelectedIndexChanged(object sender, EventArgs e)
-    {
-
-    }
 }
