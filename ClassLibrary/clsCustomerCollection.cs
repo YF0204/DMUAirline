@@ -138,6 +138,7 @@ namespace ClassLibrary
                 AnCustomer.Surname = Convert.ToString(DB.DataTable.Rows[Index]["Surname"]);
                 AnCustomer.Address1 = Convert.ToString(DB.DataTable.Rows[Index]["Address1"]);
                 AnCustomer.Address2 = Convert.ToString(DB.DataTable.Rows[Index]["Address2"]);
+                AnCustomer.Email= Convert.ToString(DB.DataTable.Rows[Index]["Email"]);
                 //add the record to the private data mamber
                 mCustomerList.Add(AnCustomer);
                 //point at the next record
