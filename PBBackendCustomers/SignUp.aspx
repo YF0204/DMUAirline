@@ -9,17 +9,34 @@
 </head>
 <body>
     <header align="center"> DmuAirline</header>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" style="z-index: 1">
     <div>
     
-    </div>
-    
-        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" style="z-index: 1; left: 452px; top: 269px; position: absolute; height: 486px; width: 515px">
+        <br />
+&nbsp;&nbsp;
+        <br />
+        <br />
+        <br />
+&nbsp;&nbsp;
+        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" CancelDestinationPageUrl="LogIn.aspx">
             <WizardSteps>
                 <asp:CreateUserWizardStep runat="server" />
                 <asp:CompleteWizardStep runat="server" />
             </WizardSteps>
         </asp:CreateUserWizard>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+    
+    </div>
     
     </form>
 </body>

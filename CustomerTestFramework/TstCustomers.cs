@@ -630,7 +630,7 @@ namespace MyTestFramework
             string Surname = "Hayat";
             string Address1 = "28 oxford street";
             string Address2 = "";
-            Address2 = Address2.PadRight(4, 'a');
+            Address2 = Address2.PadRight( 'a');
             string Postcode = "Le15xu";
             string PhoneNumber = "07734946810";
             string Email = "selinahayat@gmail.com";
@@ -1261,7 +1261,7 @@ namespace MyTestFramework
             //invoke the method 
             Found = ACustomer.Find(CustomerNo);
             //check the customerno
-            if (ACustomer.Surname != "ggg ggg")
+            if (ACustomer.Surname != "ggg ggg1")
             {
                 Ok = false;
             }
