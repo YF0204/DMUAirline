@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProjectBank.master" AutoEventWireup="true" CodeFile="MakeBooking.aspx.cs" Inherits="MakeBooking" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Secure/ProjectBank.master" AutoEventWireup="true" CodeFile="MakeBooking.aspx.cs" Inherits="MakeBooking" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <asp:ListBox ID="lstPickDestination" runat="server" Height="322px" Width="310px" AutoPostBack="True"></asp:ListBox>

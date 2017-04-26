@@ -88,7 +88,7 @@ public partial class AddCarRes : System.Web.UI.Page
             Reservation.ThisCarPark.Price = Convert.ToDecimal(NOD * 10);
             //update the record 
             Reservation.Update();
-//Response.Redirect("CarResDefault.aspx");
+            //Response.Redirect("CarResDefault.aspx");
         }
         else
         {
@@ -117,23 +117,24 @@ public partial class AddCarRes : System.Web.UI.Page
     {
         if (CarParkID == -1)
         {
-            //Add the new car reg
+            // Add the new car reg
             Add();
+            // redirect to the booking page
+            Response.Redirect("MakeBooking.aspx");
         }
         else
         {
             //update the new reservation
             Update();
+            // return to list of car park reservations
+            Response.Redirect("CarResDefault.aspx");
         }
-        //all done so redirect  back to the main page
-        Response.Redirect("MakeBooking.aspx");
-       
     }
 
     protected void BtnCancel_Click(object sender, EventArgs e)
     {
         // redirect back to the main page
-        Response.Redirect("CustomerSignUp.aspx");
+        Response.Redirect("MainMenu.aspx");
     }
 
     protected void btnSkip_Click(object sender, EventArgs e)

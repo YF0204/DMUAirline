@@ -65,7 +65,7 @@ public partial class CustomerSignUp : System.Web.UI.Page
         }
         //all done so redirect back to the main page
 
-        Response.Redirect("AddCarRes.aspx");
+        Response.Redirect("MainMenu.aspx");
 
     }
     //function for updateing records

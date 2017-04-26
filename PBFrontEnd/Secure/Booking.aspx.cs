@@ -11,15 +11,11 @@ public partial class Booking : System.Web.UI.Page
     // var for primary key with page level scope
     Int32 BookingID;
     Int32 DestinationID;
-    Int32 CustomerNo;
-    Int32 CarParkID;
 
     protected void Page_Load(object sender, EventArgs e)
     {
         // get the number of the booking to be processed
         BookingID = Convert.ToInt32(Session["BookingID"]);
-        CustomerNo = Convert.ToInt32(Session["CustomerNo"]);
-        CarParkID = Convert.ToInt32(Session["CarParkID"]);
         if (IsPostBack == false)
         {
             // get the data from the session objects
@@ -51,8 +47,8 @@ public partial class Booking : System.Web.UI.Page
         Booking.ThisBooking.TotalPrice = Convert.ToDecimal(txtTotalPrice.Text);
         Booking.ThisBooking.BookingApproved = Convert.ToBoolean(txtBookingApproved.Text);
         Booking.ThisBooking.BookingDate = Convert.ToDateTime(txtBookingDate.Text);
-        Booking.ThisBooking.CustomerNo = Convert.ToInt32(Session["CustomerNo"]);
-        Booking.ThisBooking.CarParkID = Convert.ToInt32(Session["CarParkID"]);
+        Booking.ThisBooking.CustomerNo = Convert.ToInt32(txtCustomerID.Text);
+        Booking.ThisBooking.CarParkID = Convert.ToInt32(txtCarParkID.Text);
         // add the record
         Booking.Add();
     }
@@ -78,14 +74,17 @@ public partial class Booking : System.Web.UI.Page
         {
             // add the new record
             Add();
+            // redirect to the destination page
+            Response.Redirect("BookingComplete.aspx");
         }
         else
         {
             // update the record
             Update();
+            // if booking is being updated return to list of bookings
+            Response.Redirect("ListOfBookings.aspx");
         }
-        // redirect to the destination page
-        Response.Redirect("BookingComplete.aspx");
+        
     }
 
     void DisplayBooking()
