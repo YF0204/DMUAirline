@@ -140,4 +140,28 @@ public partial class ListOfBookings : System.Web.UI.Page
         //display the number of records found
         lblError.Text = RecordCount + " records found";
     }
+
+    protected void btnManageCarParkRes_Click(object sender, EventArgs e)
+    {
+        // redirect to car park reservations page
+        Response.Redirect("CarResDefault.aspx");
+    }
+
+    protected void btnCustomerManage_Click(object sender, EventArgs e)
+    {
+        // redirect to customers page
+        Response.Redirect("Customers.aspx");
+    }
+
+    protected void btnStaffManage_Click(object sender, EventArgs e)
+    {
+        // redirect to staff page
+        Response.Redirect("StaffDefault.aspx");
+    }
+
+    protected void btnDestinationManage_Click(object sender, EventArgs e)
+    {
+        // redirect to the destinations page
+        Response.Redirect("Default.aspx");
+    }
 }
