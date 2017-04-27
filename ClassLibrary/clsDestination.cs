@@ -101,9 +101,9 @@ namespace ClassLibrary
             // boolean flag to indicate that everything is ok
             Boolean Ok = true;
             // temp variable to store day of flight values
-            DateTime FlightTemp;
+            //DateTime FlightTemp;
             // temp variable to store day of flight values
-            DateTime ReturnTemp;
+            //DateTime ReturnTemp;
             // check if the name of the destination is blank
             if (destination == "")
             {
@@ -123,33 +123,33 @@ namespace ClassLibrary
                 Ok = false;
             }
             // check if the day of flight is greater than yesterday
-            try
-            {
-                // copy the day of flight value to the dateTemp variable
-                FlightTemp = Convert.ToDateTime(dayofflight);
-                DateTime TestDate;
-                // copy the return date value to the dateTemp variable
-                ReturnTemp = Convert.ToDateTime(returndate);
-                DateTime TestReturnDate;
-                // check the dates
-                TestDate = DateTime.Now.Date.AddDays(-1);
-                TestReturnDate = DateTime.Now.Date;
-                // if the date is yesterday or lesser
-                if (FlightTemp <= TestDate)
-                {
-                    Ok = false;
-                }
-                // if the return date is less than the flight date
-                if (ReturnTemp < TestReturnDate)
-                {
-                    Ok = false;
-                }
-            }
-            // if the date is incorrect flag an error
-            catch
-            {
-                Ok = false;
-            }
+            //try
+            //{
+            //    // copy the day of flight value to the dateTemp variable
+            //    FlightTemp = Convert.ToDateTime(dayofflight);
+            //    DateTime TestDate;
+            //    // copy the return date value to the dateTemp variable
+            //    ReturnTemp = Convert.ToDateTime(returndate);
+            //    DateTime TestReturnDate;
+            //    // check the dates
+            //    TestDate = DateTime.Now.Date.AddDays(-1);
+            //    TestReturnDate = DateTime.Now.Date;
+            //    // if the date is yesterday or lesser
+            //    if (FlightTemp <= TestDate)
+            //    {
+            //        Ok = false;
+            //    }
+            //    // if the return date is less than the flight date
+            //    if (ReturnTemp < TestReturnDate)
+            //    {
+            //        Ok = false;
+            //    }
+            //}
+            //// if the date is incorrect flag an error
+            //catch
+            //{
+            //    Ok = false;
+            //}
             // return Ok
             return Ok;
             }

@@ -141,9 +141,4 @@ public partial class CarResDefault : System.Web.UI.Page
         //direct back to the main page
         Response.Redirect("AddCarRes.aspx");
     }
-
-    protected void LstCarReg_SelectedIndexChanged(object sender, EventArgs e)
-    {
-
-    }
 }

@@ -120,7 +120,7 @@ public partial class ListOfBookings : System.Web.UI.Page
             // store the data in the session object
             Session["BookingID"] = BookingID;
             // redirect to the update page
-            Response.Redirect("Booking.aspx");
+            Response.Redirect("UpdateBooking.aspx");
         }
         else
         // if no record has been selected display this message
@@ -139,5 +139,29 @@ public partial class ListOfBookings : System.Web.UI.Page
         RecordCount = DisplayBookingsByDate();
         //display the number of records found
         lblError.Text = RecordCount + " records found";
+    }
+
+    protected void btnManageCarParkRes_Click(object sender, EventArgs e)
+    {
+        // redirect to car park reservations page
+        Response.Redirect("CarResDefault.aspx");
+    }
+
+    protected void btnCustomerManage_Click(object sender, EventArgs e)
+    {
+        // redirect to customers page
+        Response.Redirect("Customers.aspx");
+    }
+
+    protected void btnStaffManage_Click(object sender, EventArgs e)
+    {
+        // redirect to staff page
+        Response.Redirect("StaffDefault.aspx");
+    }
+
+    protected void btnDestinationManage_Click(object sender, EventArgs e)
+    {
+        // redirect to the destinations page
+        Response.Redirect("Default.aspx");
     }
 }

@@ -11,6 +11,7 @@
     <asp:TextBox ID="txtBookingApproved" runat="server" style="z-index: 1; left: 138px; top: 132px; position: absolute"></asp:TextBox>
     <asp:Label ID="lblBookingApproved" runat="server" style="z-index: 1; left: 197px; top: 157px; position: absolute" Text="Booking Approved:"></asp:Label>
     <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" style="z-index: 1; left: -11px; top: 178px; position: absolute" Text="Submit Booking" />
+    <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 175px; top: 257px; position: absolute"></asp:Label>
     <asp:DropDownList ID="ddlTickets" runat="server" style="z-index: 1; left: 189px; top: 34px; position: absolute">
         <asp:ListItem Value="1"></asp:ListItem>
         <asp:ListItem Value="2"></asp:ListItem>
