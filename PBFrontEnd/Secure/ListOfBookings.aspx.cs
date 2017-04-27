@@ -120,7 +120,7 @@ public partial class ListOfBookings : System.Web.UI.Page
             // store the data in the session object
             Session["BookingID"] = BookingID;
             // redirect to the update page
-            Response.Redirect("Booking.aspx");
+            Response.Redirect("UpdateBooking.aspx");
         }
         else
         // if no record has been selected display this message

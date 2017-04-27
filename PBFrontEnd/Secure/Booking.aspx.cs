@@ -29,12 +29,6 @@ public partial class Booking : System.Web.UI.Page
             // on load add today's date to the booking date textbox and false to booking approved
             txtBookingDate.Text = DateTime.Now.Date.ToShortDateString();
             txtBookingApproved.Text = Convert.ToString(false);
-            // if this is not a new record
-            if (BookingID != -1)
-            {
-                // display the current data for the record
-                DisplayBooking();
-            }
         }
     }
 
@@ -53,20 +47,20 @@ public partial class Booking : System.Web.UI.Page
         Booking.Add();
     }
 
-    void Update()
-    {
-        // create an instance of the booking collection
-        clsBookingCollection Booking = new clsBookingCollection();
-        // find the record to update
-        Booking.ThisBooking.Find(BookingID);
-        // get the data entered
-        Booking.ThisBooking.DestinationID = Convert.ToInt32(txtID.Text);
-        Booking.ThisBooking.TotalPrice = Convert.ToDecimal(txtTotalPrice.Text);
-        Booking.ThisBooking.BookingApproved = Convert.ToBoolean(txtBookingApproved.Text);
-        Booking.ThisBooking.BookingDate = Convert.ToDateTime(txtBookingDate.Text);
-        // update the record
-        Booking.Update();
-    }
+    //void Update()
+    //{
+    //    // create an instance of the booking collection
+    //    clsBookingCollection Booking = new clsBookingCollection();
+    //    // find the record to update
+    //    Booking.ThisBooking.Find(BookingID);
+    //    // get the data entered
+    //    Booking.ThisBooking.DestinationID = Convert.ToInt32(txtID.Text);
+    //    Booking.ThisBooking.TotalPrice = Convert.ToDecimal(txtTotalPrice.Text);
+    //    Booking.ThisBooking.BookingApproved = Convert.ToBoolean(txtBookingApproved.Text);
+    //    Booking.ThisBooking.BookingDate = Convert.ToDateTime(txtBookingDate.Text);
+    //    // update the record
+    //    Booking.Update();
+    //}
 
     protected void btnOK_Click(object sender, EventArgs e)
     {
@@ -79,26 +73,24 @@ public partial class Booking : System.Web.UI.Page
         }
         else
         {
-            // update the record
-            Update();
-            // if booking is being updated return to list of bookings
-            Response.Redirect("ListOfBookings.aspx");
+            // display error message if there are any problems
+            lblError.Text = "There were problems with your booking, please try again later.";
         }
         
     }
 
-    void DisplayBooking()
-    {
-        // create an instance of the booking collection
-        clsBookingCollection Booking = new clsBookingCollection();
-        // find the record to update
-        Booking.ThisBooking.Find(BookingID);
-        // display the data for the record
-        txtDestination.Text = Booking.ThisBooking.DestinationID.ToString();
-        txtTotalPrice.Text = Booking.ThisBooking.TotalPrice.ToString();
-        txtBookingDate.Text = Booking.ThisBooking.BookingDate.ToString();
-        txtBookingApproved.Text = Booking.ThisBooking.BookingApproved.ToString();
-    }
+    //void DisplayBooking()
+    //{
+    //    // create an instance of the booking collection
+    //    clsBookingCollection Booking = new clsBookingCollection();
+    //    // find the record to update
+    //    Booking.ThisBooking.Find(BookingID);
+    //    // display the data for the record
+    //    txtDestination.Text = Booking.ThisBooking.DestinationID.ToString();
+    //    txtTotalPrice.Text = Booking.ThisBooking.TotalPrice.ToString();
+    //    txtBookingDate.Text = Booking.ThisBooking.BookingDate.ToString();
+    //    txtBookingApproved.Text = Booking.ThisBooking.BookingApproved.ToString();
+    //}
 
     // function to calculate the total price of the booking
     void CalculatePrice()

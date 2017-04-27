@@ -15,7 +15,7 @@
      
     </header>
     <form id="form1" runat="server">
-        <asp:ListBox ID="LstCarReg" runat="server" OnSelectedIndexChanged="LstCarReg_SelectedIndexChanged" style="z-index: 1; left: 415px; top: 121px; position: absolute; width: 721px; height: 282px"></asp:ListBox>
+        <asp:ListBox ID="LstCarReg" runat="server" style="z-index: 1; left: 415px; top: 121px; position: absolute; width: 721px; height: 282px"></asp:ListBox>
     <div style="text-align: center">
     
         <asp:Label ID="LblCarReg" runat="server" Text="Please Enter Your Car Reg" style="z-index: 1; left: 13px; top: 150px; position: absolute"></asp:Label>
