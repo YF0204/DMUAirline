@@ -18,7 +18,7 @@
         <br />
         <br />
 &nbsp;&nbsp;
-        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" CancelDestinationPageUrl="LogIn.aspx">
+        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" CancelDestinationPageUrl="Login.aspx" ContinueDestinationPageUrl="Login.aspx">
             <WizardSteps>
                 <asp:CreateUserWizardStep runat="server" />
                 <asp:CompleteWizardStep runat="server" />

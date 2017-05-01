@@ -1261,7 +1261,7 @@ namespace MyTestFramework
             //invoke the method 
             Found = ACustomer.Find(CustomerNo);
             //check the customerno
-            if (ACustomer.Surname != "ggg ggg1")
+            if (ACustomer.Surname != "ggg ggg")
             {
                 Ok = false;
             }
