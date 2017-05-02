@@ -40,6 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsAirline.cs" />
+    <Compile Include="clsAirlineCollection.cs" />
+    <Compile Include="clsAirlineStaff.cs" />
+    <Compile Include="clsAirlineStaffCollection.cs" />
     <Compile Include="clsBooking.cs" />
     <Compile Include="clsBookingCollection.cs" />
     <Compile Include="clsCarPark.cs" />

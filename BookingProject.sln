@@ -56,6 +56,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "PBBackendCustomers", "PBBac
 		SlnRelativePath = "PBBackendCustomers\"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirlineContractsTestFramework", "..\..\IMAT 2204 Project Management and Development\New\AirlineContracts\tstAirlineContracts\AirlineContractsTestFramework.csproj", "{966B21A2-4FA6-44BF-B677-F8D1D41E53A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -86,6 +88,10 @@ Global
 		{FB132DD2-2C43-4327-B754-5FA4D3A9B173}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB132DD2-2C43-4327-B754-5FA4D3A9B173}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{FB132DD2-2C43-4327-B754-5FA4D3A9B173}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{966B21A2-4FA6-44BF-B677-F8D1D41E53A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{966B21A2-4FA6-44BF-B677-F8D1D41E53A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{966B21A2-4FA6-44BF-B677-F8D1D41E53A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{966B21A2-4FA6-44BF-B677-F8D1D41E53A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

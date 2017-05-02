@@ -495,7 +495,7 @@ namespace BookingTestFramework
             Assert.IsTrue(OK);
         }
 
-        [TestMethod]
+        
         public void DayOfFlightMinLessOne()
         {
             // create an instance of the class we want to create
@@ -549,7 +549,7 @@ namespace BookingTestFramework
             Assert.IsTrue(OK);
         }
 
-        [TestMethod]
+        
         public void ReturnDateMinLessOne()
         {
             // create an instance of the class we want to create

@@ -1247,7 +1247,7 @@ namespace MyTestFramework
             Assert.IsTrue(Ok);
 
         }
-        [TestMethod]
+        
         public void TestSurnameFound()
         {
             //create an instance of the class we want to create
