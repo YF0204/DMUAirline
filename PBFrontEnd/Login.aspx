@@ -12,7 +12,7 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:Login ID="Login1" runat="server" CreateUserText="Sign Up" CreateUserUrl="SignUp.aspx" DestinationPageUrl="Secure/Customers.aspx" style="z-index: 1; left: 500px; top: 281px; position: absolute; height: 264px; width: 420px; right: 315px;">
+        <asp:Login ID="Login1" runat="server" CreateUserText="Sign Up" CreateUserUrl="SignUp.aspx" DestinationPageUrl="Secure/MainMenu.aspx" style="z-index: 1; left: 500px; top: 281px; position: absolute; height: 264px; width: 420px; right: 315px;">
         </asp:Login>
     
     </div>

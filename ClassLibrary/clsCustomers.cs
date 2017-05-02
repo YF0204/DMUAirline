@@ -168,16 +168,16 @@ namespace ClassLibrary
                     //flag an error
                     Ok = false;
                 }
-                //if (address2.Length == 0)
-                //{
-                //    //flag an error
-                //    Ok = false;
+                if (address2.Length == 0)
+                {
+                    //flag an error
+                    Ok = false;
 
-                //}
-                //if (address2.Length < 5)
-                //{
-                //    Ok = false;
-                //}
+                }
+                if (address2.Length < 5)
+                {
+                    Ok = false;
+                }
                 //if the name of the county is more than 50 characters 
                 if (address2.Length > 50)
                 {

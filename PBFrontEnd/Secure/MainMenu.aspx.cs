@@ -75,7 +75,7 @@ public partial class MainMenu : System.Web.UI.Page
     protected void btnCarParkRes_Click(object sender, EventArgs e)
     {
         // go to the car park reservation page
-        Response.Redirect("AddCarRes.aspx");
+        Response.Redirect("CarResDefault.aspx");
     }
 
     protected void btnSignUp_Click(object sender, EventArgs e)

@@ -65,7 +65,7 @@ public partial class CustomerSignUp : System.Web.UI.Page
         }
         //all done so redirect back to the main page
 
-        Response.Redirect("MainMenu.aspx");
+        Response.Redirect("Customers.aspx");
 
     }
     //function for updateing records
@@ -78,7 +78,9 @@ public partial class CustomerSignUp : System.Web.UI.Page
         //if the data is OK then add it to the object
         if (OK == true)
         {
+            //Customers.ThisCustomer.Find(CustomerNo);
             //get the data entered by the user
+            Customers.ThisCustomer.CustomerNo = CustomerNo;
             Customers.ThisCustomer.FirstName = TxtFirstName.Text;
             Customers.ThisCustomer.Surname = TxtSurname.Text;
             Customers.ThisCustomer.Address1 = TxtAddress1.Text;
@@ -88,6 +90,7 @@ public partial class CustomerSignUp : System.Web.UI.Page
             Customers.ThisCustomer.Email = TxtEmail.Text;
             //add the record
             Customers.Update();
+            //redirect
         }
         else
         {
